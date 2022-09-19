@@ -1,0 +1,11 @@
+<div class="main">
+    <p>calculator in child component </p>
+    <input type="number" class="textbox" [(ngModel)]="num1" placeholder="number first">
+    <input type="number" class="textbox" [(ngModel)]="num2" placeholder="number second">
+    <input type="number" class="textbox" [(ngModel)]="result" placeholder="Result is here">
+    <br><br>
+    <input type="button" class="textbox" value="Addition" (click)="add()">
+    <input type="button" class="textbox" value="Substration" (click)="sub()">
+    <input type="button" class="textbox" value="Multiply" (click)="mul()">
+    <input type="button" class="textbox" value="Division" (click)="div()">
+</div>

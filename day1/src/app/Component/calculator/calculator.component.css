@@ -1,0 +1,17 @@
+.main{
+    margin: auto;
+    background-color: aquamarine;
+    border: 1px solid brown;
+    padding: 2rem;
+    
+}
+.main p{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+.textbox{
+    padding: 10px;
+    margin: 0 10px;
+    
+}
