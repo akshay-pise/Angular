@@ -1,0 +1,40 @@
+<table class="table table-bordered">
+    <tr>
+        <th>city Name</th>
+    </tr>
+    <tr *ngFor="let arval of arraylist">
+        <td>{{arval}}</td>
+    </tr>
+</table>
+<select name="" id="">
+    <option value="disable">Other</option>
+    <option value="" class="form-control" *ngFor="let araval of arraylist">{{araval}}</option>
+</select>
+
+<div class="container" style="padding: 20px;">
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control m-3" [(ngModel)]="passfirstvalue" placeholder="Enter first name">
+            <input type="text" class="form-control m-3" [(ngModel)]="passsecondvalue" placeholder="Enter last name">
+                <input class="form-control m-3" type="button" value="add" (click)="submitinfo()">
+            <input class="form-control m-3" type="button"  value="Last remove" (click)="removeinfo()"></div>
+            </div>
+
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th>first Name</th>
+                <th>last Name</th>
+                <th>delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let nme of nameofarray; let sr=index">
+                <td>{{sr+1}}</td>
+                <td>{{nme.firstname}}</td>
+                <td>{{nme.lastname}}</td>
+                <!-- <td><a href="" (click)="deleteinfo()">delete</a></td> -->
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -9,6 +9,8 @@ import { NameListComponent } from './Component/name-list/name-list.component';
 import { VariableComponent } from './Component/variable/variable.component';
 import { PropertycompoComponent } from './Component/propertycompo/propertycompo.component';
 import { NgifComponentComponent } from './Component/ngif-component/ngif-component.component';
+import { NgforComponent } from './Component/ngfor/ngfor.component';
+import { NgstyleComponent } from './Component/ngstyle/ngstyle.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { NgifComponentComponent } from './Component/ngif-component/ngif-componen
     NameListComponent,
     VariableComponent,
     PropertycompoComponent,
-    NgifComponentComponent
+    NgifComponentComponent,
+    NgforComponent,
+    NgstyleComponent
   ],
   imports: [
     BrowserModule,

@@ -6,21 +6,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ngif-component.component.css']
 })
 export class NgifComponentComponent implements OnInit {
-  value:string;
+  value:string='';
+  placevalue:string;
   loform: string;
-isshow: boolean=false;
+show: boolean=false;
+condition: boolean=true;
+showbox:boolean=false;
+changedvalue:string='';
+
   constructor() {
-    this.value="Enter the name";
+    this.placevalue="Enter the name";
     this.loform="Login Form name using Interpolation"
-  //  if(this.isshow==false)
-  //  {
-    
-
-  //  }
-  this.isshow=!this.isshow
   }
-
   ngOnInit(): void {
   }
-
+  onchange(){
+    (this.value=="other")?this.show=true:this.show=false;
+  }
+  changediv(){
+    (this.changedvalue=="other") ? (this.showbox=true) : (this.showbox=false);
+    // if(this.changedvalue=="other"){
+    //   this.showbox=true;
+    // }
+    // else{
+    //   this.showbox=false;
+    // }
+  }
 }

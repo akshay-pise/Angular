@@ -1,8 +1,19 @@
 <h2>{{loform}}</h2>
-<input type="text" [placeholder]="value">
-<select >
-    <option value="">hindu</option>
-    <option value=""  *ngIf="isshow" >Other</option>
+<!-- <input type="text" [placeholder]="placevalue"> -->
+<!-- <select [(ngModel)]="value" (change)="onchange()">
+    <option value="hindu">hindu</option>
+    <option value="other">Other</option>
 </select>
-<input type="text" placeholder="enter here" [hidden]="true">
-<button class="btn btn-primary"> submit</button>
+<input type="text" placeholder="enter here" *ngif="show"> -->
+<!-- <button class="btn btn-primary"> submit</button> -->
+
+<div class="contaier" style="margin: 10px 20px;">
+    <input type="text" class="form-control" placeholder="enter name">
+    <input type="text" class="form-control" placeholder="Enter phone number">
+    <select class="form-control" (change)="changediv()" [(ngModel)]="changedvalue">
+        <option value="hindu">Hindu</option>
+        <option value="muslim">muslim</option>
+        <option value="other">other</option>
+    </select>
+    <input class="form-control" type="text" placeholder="Enter other cast" *ngIf="showbox">
+</div>
