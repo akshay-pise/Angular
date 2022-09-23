@@ -11,6 +11,7 @@ import { PropertycompoComponent } from './Component/propertycompo/propertycompo.
 import { NgifComponentComponent } from './Component/ngif-component/ngif-component.component';
 import { NgforComponent } from './Component/ngfor/ngfor.component';
 import { NgstyleComponent } from './Component/ngstyle/ngstyle.component';
+import { LoginPageComponent } from './task/login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NgstyleComponent } from './Component/ngstyle/ngstyle.component';
     PropertycompoComponent,
     NgifComponentComponent,
     NgforComponent,
-    NgstyleComponent
+    NgstyleComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
