@@ -9,13 +9,23 @@ import { Component, OnInit } from '@angular/core';
 export class Http3Component implements OnInit {
 
   dataList:any;
+  questionObjectFile:any;
   questionList: any;
   constructor(private http:HttpClient) {
     this.dataList=[]
+    this.questionObjectFile={
+      QuestionId: 0,
+      Question:'',
+      AnswerType:'string',
+      IsDeleted:'no',
+      IsMultple:'no',
+      QuestionDetails:'',
+      DifficultyLevel:'medium'
+    }
   }
 
   ngOnInit(): void {
-    this.showComments();
+    // this.showComments();
     this.showQuestion();
 
   }
@@ -29,6 +39,13 @@ export class Http3Component implements OnInit {
   showQuestion(){
     this.http.get("http://onlinetestapi.gerasim.in/api/OnlineTest/GetAllQuestion").subscribe((resu:any) => {
       this.questionList=resu['data'];
+    })
+  }
+
+  addquestion(){
+    // debugger;
+    this.http.post("http://onlinetestapi.gerasim.in/api/OnlineTest/AddQuestion",this.questionObjectFile).subscribe((result:any)=>{
+      this.showQuestion();
     })
   }
 

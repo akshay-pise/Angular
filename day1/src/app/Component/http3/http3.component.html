@@ -20,28 +20,30 @@
     <p>Question API Link</p>
     <p>http://onlinetestapi.gerasim.in/api/OnlineTest/GetAllQuestion</p>
     <div class="my-3 p-3">
-      <label for="">Type the Question</label>
-        <input type="text" class="form-group">
+      <label for="">Question</label>
+        <input type="text" class="form-group" [(ngModel)]="questionObjectFile.Question" name="question">
         <label for="">Question type</label>
         <input type="text" class="form-group">
         <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="check1" name="IsMultiple" value="something" checked>
+          <input type="checkbox" class="form-check-input"  name="IsMultiple" value="something">
           <label class="form-check-label" for="check1">Is Multiple</label>
         </div>
         <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="check2" name="isDeleted" value="something">
+          <input type="checkbox" class="form-check-input" name="isDeleted" value="something">
           <label class="form-check-label" for="check2">Is Deleted</label>
         </div>
 
         <label for="">question Details</label>
-        <input type="text" >
+        <input type="text" [(ngModel)]="questionObjectFile.QuestionDetails">
         <label for="">difficulty level</label>
         <select name="difficulty level" id="">
           <option value="Normal">Normal</option>
           <option value="Medium">Medium</option>
           <option value="Strong">Strong</option>
         </select>
-
+      <div>
+        <button (click)="addquestion()">add Question</button>
+      </div>
     </div>
     <div>
 
