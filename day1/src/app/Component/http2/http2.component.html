@@ -1,0 +1,59 @@
+<p>http2 works!</p>
+<!-- <table>
+    <tr>
+        <th>userId</th>
+        <th>Id</th>
+        <th>title</th>
+        <th>Language</th>
+    </tr >
+    <tr *ngFor='let item of dataList'>
+        <td>{{item.userId}}</td>
+        <td>{{item.id}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.body}}</td>
+    </tr>
+</table> -->
+
+<div class="container">
+
+  <div>
+    <p>get API Link : http://onlinetestapi.gerasim.in/api/OnlineTest/GetAllCourseList</p>
+    <p>post API Link : http://onlinetestapi.gerasim.in/api/OnlineTest/AddCourse </p>
+  </div>
+    <div class="row">
+        <div class="col">
+            <table>
+                <thead>
+                    <tr>
+                        <th>courseId</th>
+                        <th>courseName</th>
+                        <th>courseDuration</th>
+                        <th>courseBasicFees</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let list of languagelist">
+                        <td>{{list.courseId}}</td>
+                        <td>{{list.courseName}}</td>
+                        <td>{{list.courseDuration}}</td>
+                        <td>{{list.courseBasicFees}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <!-- <input type="text" [(ngModel)]="languageData.courseId" name="courseId" placeholder="Enter Course Id"> -->
+            <input type="text" class="form-group mb-2" [(ngModel)]="languageObj.CourseName" name="courseName" placeholder="Enter Course Name">
+            <br>
+            <input type="text" class="form-group  mb-2" [(ngModel)]="languageObj.CourseDuration" name="courseDuration"
+                placeholder="Enter Course Duration">
+                <br>
+            <input type="text" class="form-group  mb-2" [(ngModel)]="languageObj.CourseBasicFees" name="courseBasicFees"
+                placeholder="Enter Course Basic Fees">
+            <div>
+                <button (click)="addnewLanguage()">Add language</button>
+            </div>
+        </div>
+    </div>
+
+</div>

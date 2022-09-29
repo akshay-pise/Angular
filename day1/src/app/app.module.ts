@@ -12,6 +12,14 @@ import { NgifComponentComponent } from './Component/ngif-component/ngif-componen
 import { NgforComponent } from './Component/ngfor/ngfor.component';
 import { NgstyleComponent } from './Component/ngstyle/ngstyle.component';
 import { LoginPageComponent } from './task/login-page/login-page.component';
+import { ValidationformComponent } from './Component/validationform/validationform.component';
+import {HttpClientModule } from '@angular/common/http';
+import { HttpClientComponent } from './Component/http-client/http-client.component';
+import { PipeComponent } from './Component/pipe/pipe.component';
+import { Http2Component } from './Component/http2/http2.component';
+import { Http3Component } from './Component/http3/http3.component';
+import { Http4Component } from './Component/http4/http4.component';
+import { Http5Component } from './Component/http5/http5.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +31,21 @@ import { LoginPageComponent } from './task/login-page/login-page.component';
     NgifComponentComponent,
     NgforComponent,
     NgstyleComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    ValidationformComponent,
+    HttpClientComponent,
+    PipeComponent,
+    Http2Component,
+    Http3Component,
+    Http4Component,
+    Http5Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

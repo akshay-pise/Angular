@@ -6,10 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
+  symptonsArray: any = [];
+  changedvalue: string = "";
+  check: any;
+  selectSymptons:any;
+  clientDetails:any;
 
-  constructor() { }
+  constructor() {
+    this.selectSymptons='';
+    this.clientDetails ={
+      
+      symptonsArray:[]
+    }
+  }
 
   ngOnInit(): void {
+  }
+  addSymptons() {
+    this.clientDetails.symptonsArray.push(this.selectSymptons);
   }
 
 }

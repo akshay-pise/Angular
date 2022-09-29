@@ -1,0 +1,46 @@
+1.api
+https://storeapi.gerasim.in/api/Interview/GetLanguage
+
+2.
+1) step add HttpClientModule in import section of app.module.ts
+
+import {HttpClientModule } from '@angular/common/http';
+
+3.
+2) add import statement in your component
+import { HttpClient } from '@angular/common/http';
+
+create http object in component constructor
+
+constructor(private http:HttpClient) { 
+  }
+
+4.
+3)in component ngoninit function
+declare varibale  languagesList: any;
+constructor(private http:HttpClient) {
+    debugger;
+    this.languagesList = [];
+  }
+ this.http.get("https://storeapi.gerasim.in/api/Interview/GetLanguage").subscribe(data=> {
+      debugger;
+      this.languagesList = data;
+    })
+
+
+task1.
+http://storeapi.gerasim.in/api/Interview/GetLanguageTopic
+
+task2.
+https://storeapi.gerasim.in/api/Interview/GetLanguage
+
+
+
+post api
+http://storeapi.gerasim.in/api/Interview/addLanguage
+
+
+
+try api
+http://onlinetestapi.gerasim.in/index.html
+

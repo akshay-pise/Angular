@@ -1,1 +1,110 @@
 <p>login-page works!</p>
+<div class="container">
+    <form action="" class="container">
+        <div class="row mb-3">
+            <label for="">Date Of Birth</label>
+            <span class="col">
+                <input type="date" name="date" class="form-control">
+                <div class="form-text">Date</div>
+            </span>
+            <span class="col"> </span>
+        </div>
+        <div class="row  mb-3">
+            <label for="">Name</label>
+            <span class="col">
+                <input type="text" name="firstname" class="form-control">
+                <div class="form-text">First name</div>
+            </span>
+            <span class="col">
+                <input type="text" name="firstname" class="form-control">
+                <div class="form-text">First name</div>
+            </span>
+        </div>
+        <div class="row mb-3">
+            <label for="">Contact Details</label>
+            <span class="col">
+                <input type="number" name="contactNo" class="form-control">
+                <div class="form-text">Conatct No</div>
+            </span>
+            <span class="col">
+                <input type="email" name="email" class="form-control">
+                <div class="form-text">email</div>
+            </span>
+        </div>
+        <div class="row mb-3">
+            <label for="">Phone number</label>
+            <span class="col">
+                <input type="Number" name="phnm" class="form-control">
+                <div class="form-text">Please enter a valid phone number.</div>
+            </span>
+            <span class="col"></span>
+        </div>
+        <div class="row mb-3">
+            <label for="">Covid-19 Test Status:</label>
+            <div class="form-check col">
+                <input class="form-check-input"[(ngModel)]="clientDetails.valuechecked" type="checkbox" name="valuechecked" value="yes">
+                <label class="form-check-label" >I have Pending COVID-19 Test</label>
+                <br>
+                <input class="form-check-input" [(ngModel)]="clientDetails.coviddetected" type="checkbox" name="coviddetected" value="No">
+                <label class="form-check-label">COVID-19 Detected</label>
+            </div>
+            
+            <span class="col"></span>
+        </div>
+
+        <div class="row mb-3" *ngIf="clientDetails.valuechecked">
+            <label for="">Provide Test Serial No if Pending</label>
+            <span class="col">
+                <input type="text" name="pending" class="form-control">
+            </span>
+            <span class="col"></span>
+        </div>
+        <div class="row mb-3">
+            <label for="">If Covid-19 Detected Explain What treatment is going on from which Doctor</label>
+            <span class="col">
+                <textarea class="form-control" name="textarea" id="exampleFormControlTextarea1"
+                    placeholder="Type Here..." rows="3"></textarea>
+            </span>
+        </div>
+        <div class="row mb-3">
+            <div>
+                <select name="symptomsarray" id="" [(ngModel)]="selectSymptons">
+                    <option selected>Select</option>
+                    <option value="fever">Fever</option>
+                    <option value="cold">Cold</option>
+                    <option value="body pain">Body Pain</option>
+                    <option value="No smell">No Smell</option>
+
+                    <!-- <option value="" class="form-control" *ngFor="let araval of dropdownItem">{{araval}}</option> -->
+                </select>
+            </div>
+            <div class="col mb-3">
+                <button (click)="addSymptons()">Add Symptons</button>
+            </div>
+            <div class=" mb-3">
+                <p>Note: on click of add button symptoms will be added in below table.</p>
+                <p>in table if fever is added add red background color to that tr </p>
+            </div>
+            <div class="card  mb-3">
+                <div class="card-header">header</div>
+                <div class="card-body">
+                    <table class="w-100">
+                        <thead>
+                            <tr class="text-center bg-primary">
+                                <th>Sr No</th>
+                                <th>Symptons</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center" *ngFor="let item of clientDetails.symptonsArray, let sr=index">
+                                <th>{{sr+1}}</th>
+                                <th>{{item}}</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer">footer</div>
+            </div>
+        </div>
+    </form>
+</div>

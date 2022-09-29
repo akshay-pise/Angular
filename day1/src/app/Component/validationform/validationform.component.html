@@ -1,0 +1,83 @@
+<div class="container">
+    <form action="/action_page.php" #form="ngForm">
+        <div class="mb-3 mt-3">
+          <label class="form-label">First Name:</label>
+          <input type="text" class="form-control" placeholder="Enter First Name" [(ngModel)]="objdata.firstname"
+           #firstname="ngModel" name="firstname" minlength="3" required>
+          <div class="text-danger" *ngIf="firstname.touched">
+            <span *ngIf="firstname.errors?.['required']">Enter the name</span>
+            <span *ngIf="firstname.errors?.['minlength']">3 char requrired</span>
+          </div>
+        </div>
+        <div class="mb-3 mt-3">
+            <label class="form-label">Last Name:</label>
+            <input type="text" class="form-control" placeholder="Enter Last Name" [(ngModel)]="objdata.lastname"
+             #lastname="ngModel" name="name" minlength="3" required>
+            <div class="text-danger" *ngIf="lastname.touched">
+              <span *ngIf="lastname.errors?.['required']">Enter the Last Name</span>
+              <span *ngIf="lastname.errors?.['minlength']">3 char requrired</span>
+            </div>
+          </div>
+        <div class="mb-3">
+          <label class="form-label">Password:</label>
+          <input class="form-control" placeholder="Enter password" [(ngModel)]="objdata.passward" name="passward" minlength="8" required #pswd="ngModel">
+          <div class="text-danger" *ngIf="pswd.touched">
+            <span *ngIf="pswd.errors?.['required']">Passward must be required</span>
+            <span *ngIf="pswd.errors?.['minlength']">passward length min 8char</span>
+          </div>
+        </div>
+
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" name="remember" [(ngModel)]="objdata.isTermsAccepted">
+            <label class="form-check-label"> Remember me</label>
+          </div>
+        <button (click)="onSubmit()" [disabled]="form.invalid" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+<div class="container">
+    <form action="/action_page.php" #form="ngForm">
+        <div class="mb-3 mt-3">
+          <label class="form-label">First Name:</label>
+          <input type="text" class="form-control" placeholder="Enter First Name" [(ngModel)]="objdata.firstname"
+           #firstname="ngModel" name="firstname" minlength="3" required>
+          <div class="text-danger" *ngIf="firstname.touched">
+            <span *ngIf="firstname.errors?.['required']">Enter the name</span>
+            <span *ngIf="firstname.errors?.['minlength']">3 char requrired</span>
+          </div>
+        </div>
+        <div class="mb-3 mt-3">
+            <label class="form-label">Last Name:</label>
+            <input type="text" class="form-control" placeholder="Enter Last Name" [(ngModel)]="objdata.lastname"
+             #lastname="ngModel" name="name" minlength="3" required>
+            <div class="text-danger" *ngIf="lastname.touched">
+              <span *ngIf="lastname.errors?.['required']">Enter the Last Name</span>
+              <span *ngIf="lastname.errors?.['minlength']">3 char requrired</span>
+            </div>
+          </div>
+          <div class="mb-3 mt-3">
+            <label class="form-label">adress</label>
+            <input type="textarea" class="form-control" placeholder="Enter Last Name" [(ngModel)]="objdata.lastname"
+             #lastname="ngModel" name="name" minlength="3" required>
+            <div class="text-danger" *ngIf="lastname.touched">
+              <span *ngIf="lastname.errors?.['required']">Enter the Last Name</span>
+              <span *ngIf="lastname.errors?.['minlength']">3 char requrired</span>
+            </div>
+          </div>
+        <div class="mb-3">
+          <label class="form-label">Password:</label>
+          <input class="form-control" placeholder="Enter password" [(ngModel)]="objdata.passward" name="passward" minlength="8" required #pswd="ngModel">
+          <div class="text-danger" *ngIf="pswd.touched">
+            <span *ngIf="pswd.errors?.['required']">Passward must be required</span>
+            <span *ngIf="pswd.errors?.['minlength']">passward length min 8char</span>
+          </div>
+        </div>
+
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" name="remember" [(ngModel)]="objdata.isTermsAccepted">
+            <label class="form-check-label"> Remember me</label>
+          </div>
+        <button (click)="onSubmit()" [disabled]="form.invalid" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+

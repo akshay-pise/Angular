@@ -1,0 +1,29 @@
+<p>http5 works!</p>
+<table class="text-center">
+    <tr >
+        <th>userId</th>
+        <th>name</th>
+        <th>username</th>
+        <th>email</th>
+        
+        <th>address</th>
+        <th>phone</th>
+        <th>website</th>
+        <th>Company name</th>
+        <th>Company catchPhrase</th>
+        <th>Company bs</th>
+
+    </tr >
+    <tr *ngFor='let item of dataList'>
+        <td>{{item.Id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.username}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.address.street}} {{item.address.suite}} {{item.address.city}} {{item.address.zipcode}} {{item.address.geo.lat}} {{item.address.geo.lng}}</td>
+        <td>{{item.phone}}</td>
+        <td>{{item.website}}</td>
+        <td>{{item.company.name}}</td>
+        <td>{{item.company.catchPhrase}}</td>
+        <td>{{item.company.bs}}</td>
+    </tr>
+</table>
