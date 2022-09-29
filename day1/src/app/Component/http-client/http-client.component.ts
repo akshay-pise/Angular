@@ -23,26 +23,27 @@ export class HttpClientComponent implements OnInit {
   ngOnInit(): void {
     this.getlanguage();
     this.http.get(" http://storeapi.gerasim.in/api/Interview/GetLanguageTopic").subscribe(finaldata=> {
-      
+
       this.languageListsecond = finaldata;
     })
-    
+
   }
   Onsavelang(){
     this.http.post("http://storeapi.gerasim.in/api/Interview/addLanguage",this.addlanguage)
     .subscribe(Result=> {
       this.getlanguage();
     })
-    
+
+
   }
   getlanguage(){
     this.http.get("https://storeapi.gerasim.in/api/Interview/GetLanguage").subscribe(data=> {
-     
+
       this.languageList = data;
     })
   }
 
- 
+
 
 
 }
