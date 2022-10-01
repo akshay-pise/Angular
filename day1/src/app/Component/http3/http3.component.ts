@@ -11,23 +11,29 @@ export class Http3Component implements OnInit {
   dataList:any;
   questionObjectFile:any;
   questionList: any;
+  show:boolean=false;
   constructor(private http:HttpClient) {
     this.dataList=[]
     this.questionObjectFile={
-      QuestionId: 0,
-      Question:'',
-      AnswerType:'string',
-      IsDeleted:'no',
-      IsMultple:'no',
-      QuestionDetails:'',
-      DifficultyLevel:'medium'
+      "QuestionId": 0,
+      "Question": "string",
+      "AnswerType": "string",
+      "IsDeleted": true,
+      "QuestionDetails": "string",
+      "DifficultyLevel": "string",
+      "IsMultple": true,
+      "Options": [
+      ]
     }
   }
 
   ngOnInit(): void {
-    // this.showComments();
+    this.showComments();
     this.showQuestion();
 
+  }
+  showtable(){
+   this.show==true?this.show=false:this.show=true
   }
   showComments(){
     this.http.get("https://jsonplaceholder.typicode.com/comments").subscribe(data=> {
@@ -46,6 +52,8 @@ export class Http3Component implements OnInit {
     // debugger;
     this.http.post("http://onlinetestapi.gerasim.in/api/OnlineTest/AddQuestion",this.questionObjectFile).subscribe((result:any)=>{
       this.showQuestion();
+      alert(result.message);
+      this. questionObjectFile={}
     })
   }
 
