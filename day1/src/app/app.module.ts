@@ -20,6 +20,7 @@ import { Http2Component } from './Component/http2/http2.component';
 import { Http3Component } from './Component/http3/http3.component';
 import { Http4Component } from './Component/http4/http4.component';
 import { Http5Component } from './Component/http5/http5.component';
+import { CustpipePipe } from './Component/custpipe.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { Http5Component } from './Component/http5/http5.component';
     Http2Component,
     Http3Component,
     Http4Component,
-    Http5Component
+    Http5Component,
+    CustpipePipe
   ],
   imports: [
     BrowserModule,

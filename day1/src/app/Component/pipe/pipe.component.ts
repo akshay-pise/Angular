@@ -7,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PipeComponent implements OnInit {
 
-  constructor() { }
+  amount:number=100.1247;
+  today=Date();
+  name:string="akshay";
+  lastname="pise";
+  number={
+    name:"akshy"
+  };
+typefind=typeof(this.number);
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }
