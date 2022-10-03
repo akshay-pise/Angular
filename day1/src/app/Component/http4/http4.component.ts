@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { CandidatesService } from './candidates.service';
 
 @Component({
   selector: 'app-http4',
@@ -13,7 +14,7 @@ export class Http4Component implements OnInit {
   showcandidatelist: boolean;
   candidateList: any;
   CandidateInfo: any;
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private candservi: CandidatesService) {
     this.CandidateInfo = {
       "CandidateId": 0,
       "Name": "string",
@@ -33,7 +34,7 @@ export class Http4Component implements OnInit {
 
   ngOnInit(): void {
     this.todosFunction();
-    this.getAllCandidate()
+    this.getAllCandidate();
 
   }
   showtable() {
@@ -46,32 +47,45 @@ export class Http4Component implements OnInit {
   }
 
   getAllCandidate() {
-    this.http.get("http://onlinetestapi.gerasim.in/api/OnlineTest/GetAllCandidates").subscribe((result: any) => {
+    this.candservi.getAllCandidate().subscribe((result: any) => {
       this.candidateList = result['data'];
     })
   }
   addCandidate() {
     debugger;
-    this.http.post("http://onlinetestapi.gerasim.in/api/OnlineTest/AddCandidate",
-      this.CandidateInfo).subscribe((result: any) => {
+    this.candservi.addCandidate(this.CandidateInfo).subscribe((result: any) => {
         this.getAllCandidate();
       })
   }
   updateCandidate() {
-    this.http.post("http://onlinetestapi.gerasim.in/api/OnlineTest/UpdateCandiadte",
-      this.CandidateInfo).subscribe((result: any) => {
-        this.getAllCandidate();
-      })
-    }
+      // this.http.post("http://onlinetestapi.gerasim.in/api/OnlineTest/UpdateCandiadte",
+      //   this.CandidateInfo)
+        this.candservi.addCandidate(this.CandidateInfo).subscribe((result: any) => {
+          this.getAllCandidate();
+        })
+      }
+  // updateCandidate() {
+  //   this.http.post("http://onlinetestapi.gerasim.in/api/OnlineTest/UpdateCandiadte",
+  //     this.CandidateInfo).subscribe((result: any) => {
+  //       this.getAllCandidate();
+  //     })
+  //   }
   deleteCandidate(item:any){
     this.http.post("http://onlinetestapi.gerasim.in/api/OnlineTest/DeleteCandidate",
     item).subscribe((result:any) =>{
       this.getAllCandidate();
     })
   }
+  // deleteCandidate(item:any){
+  //   this.http.post("http://onlinetestapi.gerasim.in/api/OnlineTest/DeleteCandidate",
+  //   item).subscribe((result:any) =>{
+  //     this.getAllCandidate();
+  //   })
+  // }
   onEdit(para:any){
     debugger;
     this.CandidateInfo=para;
   }
+
 
 }

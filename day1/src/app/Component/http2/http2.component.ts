@@ -9,6 +9,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Http2Component implements OnInit {
   dataList: any;
+  isShowAlert:boolean=false;
+  isShowError:boolean=false;
   languagelist: any=[];
   languageObj:any={
     courseId:0,
@@ -37,7 +39,21 @@ export class Http2Component implements OnInit {
     this.http.post("http://onlinetestapi.gerasim.in/api/OnlineTest/AddCourse",
     this.languageObj).subscribe((result:any) =>{
       // this.languagelist=result;
-      this.getAllLanguagevalue();
+
+      if (result.result == true) {
+        // alert(result.message)
+        this.getAllLanguagevalue();
+        this.isShowAlert = true;
+        setTimeout(() => {
+          this.isShowAlert = false;
+        }, 5000);
+      } else {
+        // alert(result.message)
+        this.isShowError = true;
+        setTimeout(() => {
+          this.isShowError = false;
+        }, 5000);
+      }
     })
   }
   updateLanguage(){

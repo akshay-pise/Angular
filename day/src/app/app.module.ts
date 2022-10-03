@@ -4,15 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FirstchildComponent } from './component/firstchild/firstchild.component';
+import { WebpageComponent } from './component/webpage/webpage.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FirstchildComponent
+    FirstchildComponent,
+    WebpageComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

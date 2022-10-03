@@ -33,7 +33,6 @@ const routes: Routes = [
   { path: 'http5', component: Http5Component },
   { path: 'pipe', component: PipeComponent },
   { path: 'loginpage', component: LoginPageComponent },
-  { path: '', component: LoginPageComponent }
 ];
 
 @NgModule({

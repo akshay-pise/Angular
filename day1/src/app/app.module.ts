@@ -40,7 +40,7 @@ import { CustpipePipe } from './Component/custpipe.pipe';
     Http3Component,
     Http4Component,
     Http5Component,
-    CustpipePipe
+    CustpipePipe,
   ],
   imports: [
     BrowserModule,
