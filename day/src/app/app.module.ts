@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
-import { NavbarComponent } from './component/navbar/navbar.component';
-import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { EnquiryComponent } from './component/enquiry/enquiry.component';
 import { CourseComponent } from './component/course/course.component';
 import { CandidateComponent } from './component/candidate/candidate.component';
@@ -21,8 +19,6 @@ import { AuthGuard } from './service/auth.guard';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    NavbarComponent,
-    DashboardComponent,
     EnquiryComponent,
     CourseComponent,
     CandidateComponent,

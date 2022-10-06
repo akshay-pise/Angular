@@ -1,1 +1,111 @@
-<p>enrollment works!</p>
+<!-- couseid candidateId -->
+<div class="container">
+  <div class="row justify-content-md-center my-5">
+
+    <div class="col-6">
+      <div class="alert alert-success" *ngIf="isShowAlert">
+        <strong>Success!</strong>Record Saved Successfully.
+      </div>
+      <div class="alert alert-danger" *ngIf="isShowError">
+        <strong>Danger!</strong> Error Occured.
+      </div>
+      <form class="container shadow-sm p-3 align-center bg-light border rounded row" >
+        <div class="mb-3 mt-3 col-md-6">
+          <input type="text" class="form-control" [(ngModel)]="enrollmentObj.name" name="EnrollmentName"
+            placeholder="Enter Enrollment Name">
+        </div>
+        <div class="mb-3 mt-3 col-md-6">
+          <input type="number" class="form-control" [(ngModel)]="enrollmentObj.contactNo" name="contactNo"
+            placeholder="Enter Contact number">
+        </div>
+        <div class="mb-3 col-md-6">
+          <input type="email" class="form-control  mb-2" [(ngModel)]="enrollmentObj.email" name="email"
+            placeholder="Enter Email ID">
+        </div>
+        <div class="mb-3 col-md-6">
+          <input type="password" class="form-control mb-2" [(ngModel)]="enrollmentObj.password" name="password"
+            placeholder="Enter Password">
+        </div>
+        <div class="mb-3 col-md-6">
+          <input type="date" class="form-control  mb-2" [(ngModel)]="enrollmentObj.createdDate" name="CreatedDate"
+            placeholder="Enter Date">
+        </div>
+        <div class="mb-3 col-md-6">
+          <input type="text" class="form-control  mb-2" [(ngModel)]="enrollmentObj.city" name="City"
+            placeholder="Enter City">
+        </div>
+        <div class="mb-3 col-md-12">
+          <input type="text" class="form-control  mb-2" [(ngModel)]="enrollmentObj.collegeName" name="collegeName"
+            placeholder="Enter college Name">
+        </div>
+        <div class="mb-3 col-md-12">
+          <input type="text" class="form-control  mb-2" [(ngModel)]="enrollmentObj.education" name="education"
+            placeholder="Enter education">
+        </div>
+        <div *ngIf="enrollmentObj.enrollmentId == 0" class="col-md-6">
+          <button class="btn btn-primary" (click)="addEnrollment()">Add Enrollment</button>
+        </div>
+        <div *ngIf="enrollmentObj.enrollmentId != 0"  class="col-md-6">
+          <button class="btn btn-primary" (click)="updateEnrollment()">update Enrollment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+<div class="container row justify-content-md-center my-5 mx-auto">
+  <div class="col-6" *ngFor='let list of enrollmentList'>
+    <div class="card mb-3" style="max-width: 540px;font-size: 12px;">
+
+      <div class="row">
+        <div class="col-md-5">
+          <img src="profile-icon-blank-profile.png" height="100px" width="10px" class="img-fluid rounded-start" alt="profile-img">
+        </div>
+        <div class="col-md-7">
+
+      <div class="card-header">Enrollment Id :- {{list.enrollmentId}}</div>
+      <div class="card-body">
+        <h5 class="card-title">courseId:- {{list.courseId}}</h5>
+        <p class="card-text">courseName:- {{list.courseName}}</p>
+        <p class="card-title">candidateId:- {{list.candidateId}}</p>
+        <p class="card-text">name:- {{list.name}}</p>
+        <p class="card-text">contactNo:- {{list.contactNo}}</p>
+        <p class="card-text">email:- {{list.email}}</p>
+        <p class="card-text">enrollmentDate:- {{list.enrollmentDate}}</p>
+        <p class="card-text">enrollment No:- {{list.enrollmentNo}}</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <div class="card-footer row">
+          <button class="btn btn-success m-1 col" (click)="onEditEnrollment(list)"> Edit</button>
+          <button class="btn btn-danger  m-1 col" (click)="deleteEnrollment(list)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="row container justify-content-md-center">
+    <div class="col-6" *ngFor='let list of candidateList'>
+      <div class="card mb-3" style="max-width: 540px;">
+
+        <div class="row g-0">
+          <div class="col-md-5">
+            <img src="profile-icon-blank-profile.png" height="100px" width="10px" class="img-fluid rounded-start" alt="profile-img">
+          </div>
+          <div class="col-md-7" style="font-size: 12px;">
+            <div class="card-header">Candidate Id :- {{list.candidateId}}</div>
+            <div class="card-body">
+              <h5 class="card-title">name:- {{list.name}}</h5>
+              <p class="card-text">Contact:- {{list.contactNo}}</p>
+              <p class="card-text">Email:- {{list.email}}</p>
+              <p class="card-text">College Name:- {{list.collegeName}}</p>
+              <p class="card-text">Eduction:- {{list.education}}</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+            <div class="card-footer row">
+              <button class="btn btn-success m-1 col" (click)="onEditCandidate(list)"> Edit</button>
+              <button class="btn btn-danger  m-1 col" (click)="deleteCandidate(list)">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->

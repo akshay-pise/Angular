@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.loginObj.userName == 'admin' && this.loginObj.password == 'admin') {
       this.router.navigateByUrl('home');
-      // localStorage.setItem('userid','admin');
+      localStorage.setItem('userid','admin');
 
     }
     else {

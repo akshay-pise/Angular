@@ -1,59 +1,59 @@
-<p>course works!</p>
 <div class="container">
+  <div class="row justify-content-md-center my-5">
 
-  <div>
-    <p>get API Link : http://onlinetestapi.gerasim.in/api/OnlineTest/GetAllCourseList</p>
-    <p>post API Link : http://onlinetestapi.gerasim.in/api/OnlineTest/AddCourse </p>
-  </div>
-  <div class="row">
-    <div class="col-8">
+    <div class="col-6">
       <div class="alert alert-success" *ngIf="isShowAlert">
         <strong>Success!</strong>Record Saved Successfully.
       </div>
       <div class="alert alert-danger" *ngIf="isShowError">
         <strong>Danger!</strong> Error Occured.
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>courseId</th>
-            <th>courseName</th>
-            <th>courseDuration</th>
-            <th>courseBasicFees</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let list of languagelist">
-            <td>{{list.courseId}}</td>
-            <td>{{list.courseName}}</td>
-            <td>{{list.courseDuration}}</td>
-            <td>{{list.courseBasicFees}}</td>
-            <td>
-              <button class="btn btn-success m-1" (click)="onEdit(list)"> Edit</button>
-              <button class="btn btn-danger  m-1" (click)="deleteLanguage(list)">Delelte</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <form class="container shadow-sm p-3 align-center bg-light border rounded row" >
+        <div class="mb-3 mt-3 col-md-6">
+          <input type="text" class="form-control" [(ngModel)]="courseObj.courseName" name="courseName"
+            placeholder="Enter course Name">
+        </div>
+        <div class="mb-3 mt-3 col-md-6">
+          <input type="number" class="form-control" [(ngModel)]="courseObj.courseDuration" name="courseDuration"
+            placeholder="Enter Course Duration">
+        </div>
+        <div class="mb-3 col-md-6">
+          <input type="email" class="form-control  mb-2" [(ngModel)]="courseObj.courseBasicFees" name="courseBasicFees"
+            placeholder="Enter course Basic Fees">
+        </div>
+        <div *ngIf="courseObj.courseId == 0" class="col-md-6">
+          <button class="btn btn-primary" (click)="addnewLanguage()">Add language</button>
+        </div>
+        <div *ngIf="courseObj.courseId != 0"  class="col-md-6">
+          <button class="btn btn-primary" (click)="updateLanguage()">update language</button>
+        </div>
+      </form>
     </div>
-    <form class="col">
-      <!-- <input type="text" [(ngModel)]="languageData.courseId" name="courseId" placeholder="Enter Course Id"> -->
-      <input type="text" class="form-group mb-2" [(ngModel)]="courseObj.courseName" name="courseName"
-        placeholder="Enter Course Name">
-      <br>
-      <input type="text" class="form-group  mb-2" [(ngModel)]="courseObj.courseDuration" name="courseDuration"
-        placeholder="Enter Course Duration">
-      <br>
-      <input type="text" class="form-group  mb-2" [(ngModel)]="courseObj.courseBasicFees" name="courseBasicFees"
-        placeholder="Enter Course Basic Fees">
-
-      <div *ngIf="courseObj.courseId ==0">
-        <button (click)="addnewLanguage()">Add language</button>
-      </div>
-      <div *ngIf="courseObj.courseId != 0">
-        <button (click)="updateLanguage()">update language</button>
-      </div>
-    </form>
   </div>
 
+  <div class="row container justify-content-md-center">
+    <div class="col-6" *ngFor='let list of languagelist'>
+      <div class="card mb-3" style="max-width: 540px;">
+
+        <div class="row g-0">
+          <div class="col-md-5">
+            <img src="profile-icon-blank-profile.png" height="100px" width="10px" class="img-fluid rounded-start" alt="language-icon">
+          </div>
+          <div class="col-md-7" style="font-size: 12px;">
+            <div class="card-header"> Course Id :- {{list.courseId}}</div>
+            <div class="card-body">
+              <h5 class="card-title">name:- {{list.courseName}}</h5>
+              <p class="card-text">Contact:- {{list.courseDuration}}</p>
+              <p class="card-text">Email:- {{list.courseBasicFees}}</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+            <div class="card-footer row">
+              <button class="btn btn-success m-1 col" (click)="onEdit(list)"> Edit</button>
+              <button class="btn btn-danger  m-1 col" (click)="deleteLanguage(list)">Delelte</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

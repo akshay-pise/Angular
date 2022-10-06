@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CandidateComponent } from './component/candidate/candidate.component';
 import { CourseComponent } from './component/course/course.component';
-import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { EnquiryComponent } from './component/enquiry/enquiry.component';
 import { EnrollmentComponent } from './component/enrollment/enrollment.component';
 import { HomeComponent } from './component/home/home.component';
@@ -24,7 +23,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    // canActivate:[AuthGuard],
+    canActivate:[AuthGuard],
     children: [
       {
         path: 'candidate',
@@ -33,10 +32,6 @@ const routes: Routes = [
       {
         path: 'course',
         component: CourseComponent
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent
       },
       {
         path: 'enquiry',

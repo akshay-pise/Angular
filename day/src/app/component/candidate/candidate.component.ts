@@ -55,10 +55,7 @@ export class CandidateComponent implements OnInit {
     })
   }
   addCandidate() {
-    debugger;
     this.candservi.addCandidate(this.CandidateInfo).subscribe((result: any) => {
-
-
         if (result.result == true) {
           this.getAllCandidate();
           this.isShowAlert = true;
@@ -84,7 +81,7 @@ export class CandidateComponent implements OnInit {
       this.getAllCandidate();
     })
   }
-  onEdit(para:any){
+  onEditCandidate(para:any){
     debugger;
     this.CandidateInfo=para;
   }
