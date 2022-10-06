@@ -1,0 +1,167 @@
+/* * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+ }
+ .main{
+   margin: 10px 0;
+}
+ .agent-block{
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+ }
+
+ .counter-container{
+  justify-content: center;
+  text-align: center;
+  height: 12vw;
+  margin: auto;
+  width: 13vw;
+  border-radius: 10px 50px;
+  box-shadow: 5px 5px 20px 2px #941a1a;
+ }
+.f{
+  font-size: 4vw;
+  width: 100%;
+  height: 60%;
+  font-weight: 500;
+  padding-top: 10px;
+  font-family: 'Open Sans', sans-serif;
+  color: #ff3b94;
+}
+.s{
+  font-size: 1vw;
+  height: 40%;
+  width: 100%;
+  padding-top: 5%;
+  font-weight: 600;
+  color: #af3dff;
+}
+
+ @media (max-width: 960px) {
+  .s{
+   color: #941a1a;
+  }
+ } */
+
+
+
+
+ *{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.5vw;
+}
+.main{
+  width: 100%;
+}
+.row1{
+  display:flex;
+  justify-content: space-around;
+  padding: 50px 5px;
+  position: relative;
+  margin: auto;
+  color: #ffffff;
+}
+.first, .second, .third{
+  width: 29%;
+  height: 12vw;
+  border-radius: 4px;
+  padding: 10px 20px;
+  background-repeat: no-repeat;
+  box-shadow: 5px 5px 20px 2px #7886a0;
+  /* text-shadow: 0px 0px 1px ; */
+  background-size: cover;
+
+
+}
+.title, .ffotter{
+  height: calc(60%/2);
+  padding: 5px 0;
+}
+.fbody{
+  height: 40%;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+.title{
+  justify-content: space-around;
+  font-weight: 500;
+  text-align: left;
+}
+.ffotter{
+  letter-spacing: 2px;
+}
+.first{
+  background-image: url(./firstback.png);
+}
+.second{
+  background-image: url(./thirdback.png);
+
+}
+.third{
+  background-image: url(./secondback.png);
+}
+.logo{
+  position: relative;
+  top: 40%;
+}
+.fas{
+  font-size: 2vw;
+
+}
+.count{
+  font-family: 'Chivo', sans-serif;
+  font-size: 3vw;
+  /* color: crimson; */
+
+}
+.ffotter{
+  margin-top: 5px;
+  font-size: 1vw;
+}
+
+
+@media (max-width:960px) {
+
+  *{
+      font-size: 2vw;
+      transition: 0.3s ease;
+  }
+  .row1{
+      align-items: center;
+      justify-content: center;
+  }
+
+  .row1{
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .first, .second, .third{
+      width: 50%;
+      height: 17vw;
+      margin: 10px;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 3px;
+
+  }
+  .logo{
+      top: 30%;
+  }
+
+  .fas{
+      font-size: 2.5vw;
+  }
+  .ffotter{
+      margin-top: 5px;
+      font-size: 1.5vw;
+  }
+
+
+}

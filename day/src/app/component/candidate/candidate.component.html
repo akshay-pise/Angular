@@ -1,0 +1,164 @@
+<div class="container">
+  <div class="row justify-content-md-center my-5">
+
+    <div class="col-6">
+      <div class="alert alert-success" *ngIf="isShowAlert">
+        <strong>Success!</strong>Record Saved Successfully.
+      </div>
+      <div class="alert alert-danger" *ngIf="isShowError">
+        <strong>Danger!</strong> Error Occured.
+      </div>
+      <form class="container shadow-sm p-3 align-center bg-light border rounded row" >
+        <div class="mb-3 mt-3 col-md-6">
+          <input type="text" class="form-control" [(ngModel)]="CandidateInfo.name" name="courseName"
+            placeholder="Enter Candidate Name">
+        </div>
+        <div class="mb-3 mt-3 col-md-6">
+          <input type="number" class="form-control" [(ngModel)]="CandidateInfo.contactNo" name="contactNo"
+            placeholder="Enter Contact number">
+        </div>
+        <div class="mb-3 col-md-6">
+          <input type="email" class="form-control  mb-2" [(ngModel)]="CandidateInfo.email" name="email"
+            placeholder="Enter Email ID">
+        </div>
+        <div class="mb-3 col-md-6">
+          <input type="password" class="form-control mb-2" [(ngModel)]="CandidateInfo.password" name="password"
+            placeholder="Enter Password">
+        </div>
+        <div class="mb-3 col-md-6">
+          <input type="date" class="form-control  mb-2" [(ngModel)]="CandidateInfo.createdDate" name="CreatedDate"
+            placeholder="Enter Date">
+        </div>
+        <div class="mb-3 col-md-6">
+          <input type="text" class="form-control  mb-2" [(ngModel)]="CandidateInfo.city" name="City"
+            placeholder="Enter information">
+        </div>
+        <div class="mb-3 col-md-12">
+          <input type="text" class="form-control  mb-2" [(ngModel)]="CandidateInfo.collegeName" name="collegeName"
+            placeholder="Enter college Name">
+        </div>
+        <div class="mb-3 col-md-12">
+          <input type="text" class="form-control  mb-2" [(ngModel)]="CandidateInfo.education" name="education"
+            placeholder="Enter education">
+        </div>
+        <div *ngIf="CandidateInfo.CandidateId == 0" class="col-md-6">
+          <button class="btn btn-primary" (click)="addCandidate()">Add language</button>
+        </div>
+        <div *ngIf="CandidateInfo.CandidateId != 0"  class="col-md-6">
+          <button class="btn btn-primary" (click)="updateCandidate()">update language</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row container justify-content-md-center">
+    <div class="col-6" *ngFor='let list of candidateList'>
+      <div class="card mb-3" style="max-width: 540px;">
+
+        <div class="row g-0">
+          <div class="col-md-5">
+            <img src="profile-icon-blank-profile.png" height="100px" width="10px" class="img-fluid rounded-start" alt="profile-img">
+          </div>
+          <div class="col-md-7" style="font-size: 12px;">
+            <div class="card-header">Candidate Id :- {{list.candidateId}}</div>
+            <div class="card-body">
+              <h5 class="card-title">name:- {{list.name}}</h5>
+              <p class="card-text">Contact:- {{list.contactNo}}</p>
+              <p class="card-text">Email:- {{list.email}}</p>
+              <p class="card-text">College Name:- {{list.collegeName}}</p>
+              <p class="card-text">Eduction:- {{list.education}}</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+            <div class="card-footer row">
+              <button class="btn btn-success m-1 col" (click)="onEdit(list)"> Edit</button>
+              <button class="btn btn-danger  m-1 col" (click)="deleteCandidate(list)">Delelte</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- <div class="row">
+    <div class="col-2">
+      <form class="container shadow-sm p-3 align-center bg-light border rounded">
+        <div class="mb-3 mt-3">
+          <input type="text" class="form-control" [(ngModel)]="CandidateInfo.name" name="courseName"
+            placeholder="Enter Candidate Name">
+        </div>
+        <div class="mb-3">
+          <input type="number" class="form-control" [(ngModel)]="CandidateInfo.contactNo" name="contactNo"
+            placeholder="Enter Contact number">
+        </div>
+        <div class="mb-3">
+          <input type="email" class="form-control  mb-2" [(ngModel)]="CandidateInfo.email" name="email"
+            placeholder="Enter Email ID">
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control mb-2" [(ngModel)]="CandidateInfo.password" name="password"
+            placeholder="Enter Password">
+        </div>
+        <div class="mb-3">
+          <input type="date" class="form-control  mb-2" [(ngModel)]="CandidateInfo.createdDate" name="CreatedDate"
+            placeholder="Enter Date">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control  mb-2" [(ngModel)]="CandidateInfo.city" name="City"
+            placeholder="Enter information">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control  mb-2" [(ngModel)]="CandidateInfo.collegeName" name="collegeName"
+            placeholder="Enter college Name">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control  mb-2" [(ngModel)]="CandidateInfo.education" name="education"
+            placeholder="Enter education">
+        </div>
+        <div *ngIf="CandidateInfo.CandidateId == 0">
+          <button class="btn btn-primary" (click)="addCandidate()">Add language</button>
+        </div>
+        <div *ngIf="CandidateInfo.CandidateId != 0">
+          <button class="btn btn-primary" (click)="updateCandidate()">update language</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="col container shadow-sm p-3 align-center bg-light border rounded">
+      <table *ngIf="true" class="table">
+        <thead class="thead-light">
+          <tr>
+            <th>Sr. No.</th>
+            <th>Candidate Id</th>
+            <th>Name</th>
+            <th>contact No</th>
+            <th>email</th>
+            <th>password</th>
+            <th>createdDate</th>
+            <th>city</th>
+            <th>collegeName</th>
+            <th>education</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let list of candidateList, let no=index'>
+            <td>{{no+1}}</td>
+            <td>{{list.candidateId}}</td>
+            <td>{{list.name | titlecase}}</td>
+            <td>{{list.contactNo}}</td>
+            <td>{{list.email}}</td>
+            <td>{{list.password}}</td>
+            <td>{{list.createdDate}}</td>
+            <td>{{list.city}}</td>
+            <td>{{list.collegeName}}</td>
+            <td>{{list.education}}</td>
+            <td>
+              <button class="btn btn-success m-1" (click)="onEdit(list)"> Edit</button>
+              <button class="btn btn-danger  m-1" (click)="deleteCandidate(list)">Delelte</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div> -->
+</div>
