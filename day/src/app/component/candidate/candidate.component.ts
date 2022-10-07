@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { CandidatesService } from './candidates.service';
+import { CandidatesService } from 'src/app/service/candidates.service';
 
 @Component({
   selector: 'app-candidate',
@@ -15,8 +15,8 @@ export class CandidateComponent implements OnInit {
   showcandidatelist: boolean;
   candidateList: any;
   CandidateInfo: any;
-  isShowAlert:boolean = false;
-  isShowError:boolean = false;
+  isShowAlert: boolean = false;
+  isShowError: boolean = false;
   constructor(private http: HttpClient, private candservi: CandidatesService) {
     this.CandidateInfo = {
       "CandidateId": 0,
@@ -36,17 +36,7 @@ export class CandidateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.todosFunction();
     this.getAllCandidate();
-
-  }
-  showtable() {
-    this.show == true ? this.show = false : this.show = true
-  }
-  todosFunction() {
-    this.http.get("https://jsonplaceholder.typicode.com/todos").subscribe((data:any) => {
-      this.dataList = data;
-    })
   }
 
   getAllCandidate() {
@@ -56,34 +46,34 @@ export class CandidateComponent implements OnInit {
   }
   addCandidate() {
     this.candservi.addCandidate(this.CandidateInfo).subscribe((result: any) => {
-        if (result.result == true) {
-          this.getAllCandidate();
-          this.isShowAlert = true;
-          setTimeout(() => {
-            this.isShowAlert = false;
-          }, 5000);
-        } else {
-          this.isShowError = true;
-          setTimeout(() => {
-            this.isShowError = false;
-          }, 5000);
-        }
-      })
+      if (result.result == true) {
+        this.getAllCandidate();
+        this.isShowAlert = true;
+        setTimeout(() => {
+          this.isShowAlert = false;
+        }, 5000);
+      } else {
+        this.isShowError = true;
+        setTimeout(() => {
+          this.isShowError = false;
+        }, 5000);
+      }
+    })
   }
   updateCandidate() {
-        this.candservi.addCandidate(this.CandidateInfo).subscribe((result: any) => {
-          this.getAllCandidate();
-        })
-      }
-  deleteCandidate(item:any){
-    this.http.post("http://onlinetestapi.gerasim.in/api/OnlineTest/DeleteCandidate",
-    item).subscribe((result:any) =>{
+    this.candservi.addCandidate(this.CandidateInfo).subscribe((result: any) => {
       this.getAllCandidate();
     })
   }
-  onEditCandidate(para:any){
+  deleteCandidate(item: any) {
+    this.http.post("http://onlinetestapi.gerasim.in/api/OnlineTest/DeleteCandidate",
+      item).subscribe((result: any) => {
+        this.getAllCandidate();
+      })
+  }
+  onEditCandidate(para: any) {
     debugger;
-    this.CandidateInfo=para;
+    this.CandidateInfo = para;
   }
 
 
