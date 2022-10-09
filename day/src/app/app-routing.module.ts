@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CandidateComponent } from './component/candidate/candidate.component';
 import { CourseComponent } from './component/course/course.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { EnquiryComponent } from './component/enquiry/enquiry.component';
 import { EnrollmentComponent } from './component/enrollment/enrollment.component';
 import { HomeComponent } from './component/home/home.component';
@@ -25,6 +26,10 @@ const routes: Routes = [
     component: HomeComponent,
     canActivate:[AuthGuard],
     children: [
+      {
+        path: '',
+        component: DashboardComponent
+      },
       {
         path: 'candidate',
         component: CandidateComponent

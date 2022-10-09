@@ -11,7 +11,6 @@ export class CandidatesService {
 
   getAllCandidate():Observable <any[]>{
     return this.http.get<any>("http://onlinetestapi.gerasim.in/api/OnlineTest/GetAllCandidates")
-
   }
   addCandidate(obj:any):Observable<any> {
     return this.http.post<any>("http://onlinetestapi.gerasim.in/api/OnlineTest/AddCandidate",

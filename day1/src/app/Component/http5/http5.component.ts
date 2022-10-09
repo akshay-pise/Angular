@@ -9,15 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class Http5Component implements OnInit {
 
   dataList:any;
-  constructor(private http:HttpClient) { 
+  constructor(private http:HttpClient) {
     this.dataList=[]
   }
 
   ngOnInit(): void {
     this.http.get("https://jsonplaceholder.typicode.com/users").subscribe(data=> {
-     
+
       this.dataList = data;
     })
   }
+  getData(para:string){}
 
 }

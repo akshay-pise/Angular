@@ -13,6 +13,7 @@ import { EnrollmentComponent } from './component/enrollment/enrollment.component
 import { PaymentComponent } from './component/payment/payment.component';
 import {HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './service/auth.guard';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AuthGuard } from './service/auth.guard';
     CourseComponent,
     CandidateComponent,
     EnrollmentComponent,
-    PaymentComponent
+    PaymentComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

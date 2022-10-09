@@ -42,8 +42,22 @@
           <input type="text" class="form-control  mb-2" [(ngModel)]="enrollmentObj.education" name="education"
             placeholder="Enter education">
         </div> -->
+
+        <div class="form-control border-0">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>select Candidate Id</option>
+            <option [value]="" *ngFor="let list of candidateList">{{list.name}}</option>
+          </select>
+        </div>
+         <div class="form-control border-0">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Select Course Id</option>
+            <option [value]="" *ngFor="let list of courseList">{{list.courseId}}</option>
+          </select>
+        </div>
+
         <div class="mb-3 col-md-12">
-          <input type="text" class="form-control  mb-2" [(ngModel)]="enrollmentObj.education" name="education"
+          <input type="date" class="form-control  mb-2" [(ngModel)]="enrollmentObj.education" name="education"
             placeholder="Enter">
         </div>
         <div class="mb-3 col-md-12">

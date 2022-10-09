@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class CourseComponent implements OnInit {
 
   dataList: any;
+  showForm:boolean=true;
   isShowAlert:boolean=false;
   isShowError:boolean=false;
   languagelist: any=[];
@@ -70,5 +71,7 @@ export class CourseComponent implements OnInit {
     debugger;
     this.courseObj=para;
   }
+  clearData(){
 
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { CandidatesService } from 'src/app/service/candidates.service';
+import { CourseService } from 'src/app/service/course.service';
 import { EnrollmentService } from './enrollment.service';
 
 @Component({
@@ -9,34 +10,54 @@ import { EnrollmentService } from './enrollment.service';
 })
 export class EnrollmentComponent implements OnInit {
 
-  isShowAlert:boolean = false;
-  isShowError:boolean = false;
-  enrollmentObj: any ;
-  enrollmentList:any [];
-  constructor(private enrollserv: EnrollmentService) {
+  isShowAlert: boolean = false;
+  isShowError: boolean = false;
+  enrollmentObj: any;
+  enrollmentList: any[];
+  candidateList: any;
+  courseList:any;
+  constructor(private enrollserv: EnrollmentService, private candservi: CandidatesService, private courseservi: CourseService) {
     this.enrollmentObj =
-      {
-        "enrollmentId": 0,
-        "courseId": 414,
-        "courseName": "",
-        "candidateId": 370,
-        "name": "",
-        "contactNo": "",
-        "email": "",
-        "enrollmentDate": "",
-        "enrollmentNo": ""
-      };
-      this.enrollmentList=[];
+    {
+      "enrollmentId": 0,
+      "courseId": 414,
+      "courseName": "",
+      "candidateId": 370,
+      "name": "",
+      "contactNo": "",
+      "email": "",
+      "enrollmentDate": "",
+      "enrollmentNo": ""
+    };
+    this.enrollmentList = [];
+    this.candidateList = [];
+    this.courseList=[];
   }
 
   ngOnInit(): void {
     this.getEnrollmentList();
+    this.getCandidateList();
+    this.getAllCourse();
   }
   getEnrollmentList() {
-    this.enrollserv.getEnrollmentList().subscribe((result: any) =>{
-     this.enrollmentList = result['data']
+    this.enrollserv.getEnrollmentList().subscribe((result: any) => {
+      this.enrollmentList = result['data']
     });
 
+  }
+  getCandidateList() {
+    this.candservi.getAllCandidate().subscribe((result: any) => {
+      this.candidateList = result['data'];
+    })
+  }
+  getAllCourse() {
+    debugger;
+    this.courseservi.getAllCourse().subscribe((result: any) => {
+      this.courseList = result['data'];
+    })
+    // this.http.get("http://onlinetestapi.gerasim.in/api/OnlineTest/GetAllCourseList").subscribe((result:any) => {
+    //   this.languagelist = result['data'];
+    // })
   }
   addEnrollment() {
 
@@ -60,14 +81,14 @@ export class EnrollmentComponent implements OnInit {
     //   this.getAllCandidate();
     // })
   }
-  onEditEnrollment(para:any){
+  onEditEnrollment(para: any) {
     // this.http.post("http://onlinetestapi.gerasim.in/api/OnlineTest/DeleteCandidate",
     // item).subscribe((result:any) =>{
     //   this.getAllCandidate();
     // })
   }
-  deleteEnrollment(para:any){
-    this.enrollmentObj=para;
+  deleteEnrollment(para: any) {
+    this.enrollmentObj = para;
   }
 
 

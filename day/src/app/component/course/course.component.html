@@ -8,26 +8,34 @@
       <div class="alert alert-danger" *ngIf="isShowError">
         <strong>Danger!</strong> Error Occured.
       </div>
-      <form class="container shadow-sm p-3 align-center bg-light border rounded row" >
-        <div class="mb-3 mt-3 col-md-6">
-          <input type="text" class="form-control" [(ngModel)]="courseObj.courseName" name="courseName"
-            placeholder="Enter course Name">
-        </div>
-        <div class="mb-3 mt-3 col-md-6">
-          <input type="number" class="form-control" [(ngModel)]="courseObj.courseDuration" name="courseDuration"
-            placeholder="Enter Course Duration">
-        </div>
-        <div class="mb-3 col-md-6">
-          <input type="email" class="form-control  mb-2" [(ngModel)]="courseObj.courseBasicFees" name="courseBasicFees"
-            placeholder="Enter course Basic Fees">
-        </div>
-        <div *ngIf="courseObj.courseId == 0" class="col-md-6">
-          <button class="btn btn-primary" (click)="addnewLanguage()">Add language</button>
-        </div>
-        <div *ngIf="courseObj.courseId != 0"  class="col-md-6">
-          <button class="btn btn-primary" (click)="updateLanguage()">update language</button>
-        </div>
-      </form>
+      <!-- <div *ngIf="showForm=true">
+
+      </div> -->
+      <div >
+        <form class="container shadow-sm p-3 align-center bg-light border rounded row">
+          <div class="mb-3 mt-3 col-md-6">
+            <input type="text" class="form-control" [(ngModel)]="courseObj.courseName" name="courseName"
+              placeholder="Enter course Name">
+          </div>
+          <div class="mb-3 mt-3 col-md-6">
+            <input type="number" class="form-control" [(ngModel)]="courseObj.courseDuration" name="courseDuration"
+              placeholder="Enter Course Duration">
+          </div>
+          <div class="mb-3 col-md-6">
+            <input type="email" class="form-control  mb-2" [(ngModel)]="courseObj.courseBasicFees"
+              name="courseBasicFees" placeholder="Enter course Basic Fees">
+          </div>
+          <div *ngIf="courseObj.courseId == 0" class="col-md-6">
+            <button class="btn btn-primary" (click)="addnewLanguage()">Add language</button>
+          </div>
+          <div *ngIf="courseObj.courseId != 0" class="col-md-6">
+            <button class="btn btn-primary" (click)="updateLanguage()">update language</button>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-primary" (click)="clearData()">clear</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 
@@ -37,7 +45,8 @@
 
         <div class="row g-0">
           <div class="col-md-5">
-            <img src="profile-icon-blank-profile.png" height="100px" width="10px" class="img-fluid rounded-start" alt="language-icon">
+            <img src="profile-icon-blank-profile.png" height="100px" width="10px" class="img-fluid rounded-start"
+              alt="language-icon">
           </div>
           <div class="col-md-7" style="font-size: 12px;">
             <div class="card-header"> Course Id :- {{list.courseId}}</div>
