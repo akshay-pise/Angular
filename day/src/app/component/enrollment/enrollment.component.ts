@@ -10,6 +10,7 @@ import { EnrollmentService } from './enrollment.service';
 })
 export class EnrollmentComponent implements OnInit {
 
+  showForm:boolean=true;
   isShowAlert: boolean = false;
   isShowError: boolean = false;
   enrollmentObj: any;
@@ -90,6 +91,20 @@ export class EnrollmentComponent implements OnInit {
   deleteEnrollment(para: any) {
     this.enrollmentObj = para;
   }
-
+  addhideform() {
+    this.showForm == true ? this.showForm = false : this.showForm = true
+    this.enrollmentObj =
+    {
+      "enrollmentId": 0,
+      "courseId": null,
+      "courseName": "",
+      "candidateId": null,
+      "name": "",
+      "contactNo": "",
+      "email": "",
+      "enrollmentDate": "",
+      "enrollmentNo": ""
+    };
+  }
 
 }

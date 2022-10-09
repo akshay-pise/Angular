@@ -1,7 +1,13 @@
 <!-- couseid candidateId -->
 <div class="container">
-  <div class="row justify-content-md-center my-5">
-
+  <div class="row mt-3">
+    <div class="col-md-3 d-flex justify-content-end">
+      <div *ngIf="showForm==true" class="flex-end">
+        <button class="btn btn-primary" (click)="addhideform()">Add language</button>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-md-center my-3">
     <div class="col-6">
       <div class="alert alert-success" *ngIf="isShowAlert">
         <strong>Success!</strong>Record Saved Successfully.
@@ -9,40 +15,7 @@
       <div class="alert alert-danger" *ngIf="isShowError">
         <strong>Danger!</strong> Error Occured.
       </div>
-      <form class="container shadow-sm p-3 align-center bg-light border rounded row" >
-        <!-- <div class="mb-3 mt-3 col-md-6">
-          <input type="text" class="form-control" [(ngModel)]="enrollmentObj.name" name="EnrollmentName"
-            placeholder="Enter Enrollment Name">
-        </div> -->
-        <!-- <div class="mb-3 mt-3 col-md-6">
-          <input type="number" class="form-control" [(ngModel)]="enrollmentObj.contactNo" name="contactNo"
-            placeholder="Enter Contact number">
-        </div> -->
-        <!-- <div class="mb-3 col-md-6">
-          <input type="email" class="form-control  mb-2" [(ngModel)]="enrollmentObj.email" name="email"
-            placeholder="Enter Email ID">
-        </div> -->
-        <!-- <div class="mb-3 col-md-6">
-          <input type="password" class="form-control mb-2" [(ngModel)]="enrollmentObj.password" name="password"
-            placeholder="Enter Password">
-        </div> -->
-        <!-- <div class="mb-3 col-md-6">
-          <input type="date" class="form-control  mb-2" [(ngModel)]="enrollmentObj.createdDate" name="CreatedDate"
-            placeholder="Enter Date">
-        </div> -->
-        <!-- <div class="mb-3 col-md-6">
-          <input type="text" class="form-control  mb-2" [(ngModel)]="enrollmentObj.city" name="City"
-            placeholder="Enter City">
-        </div> -->
-        <!-- <div class="mb-3 col-md-12">
-          <input type="text" class="form-control  mb-2" [(ngModel)]="enrollmentObj.collegeName" name="collegeName"
-            placeholder="Enter college Name">
-        </div> -->
-        <!-- <div class="mb-3 col-md-12">
-          <input type="text" class="form-control  mb-2" [(ngModel)]="enrollmentObj.education" name="education"
-            placeholder="Enter education">
-        </div> -->
-
+      <form class="container shadow-sm p-3 align-center bg-light border rounded row" #form="ngForm">
         <div class="form-control border-0">
           <select class="form-select" aria-label="Default select example">
             <option selected>select Candidate Id</option>
@@ -65,10 +38,13 @@
             placeholder="Enter">
         </div>
         <div *ngIf="enrollmentObj.enrollmentId == 0" class="col-md-6">
-          <button class="btn btn-primary" (click)="addEnrollment()">Add Enrollment</button>
+          <button class="btn btn-primary" (click)="addEnrollment()" [disabled]="form.invalid">Add Enrollment</button>
         </div>
         <div *ngIf="enrollmentObj.enrollmentId != 0"  class="col-md-6">
           <button class="btn btn-primary" (click)="updateEnrollment()">update Enrollment</button>
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-primary" (click)="addhideform()">clear</button>
         </div>
       </form>
     </div>

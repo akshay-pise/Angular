@@ -1,6 +1,12 @@
 <div class="container">
-  <div class="row justify-content-md-center my-5">
-
+  <div class="row mt-3">
+    <div class="col-md-3 d-flex justify-content-end">
+      <div *ngIf="showForm==true" class="flex-end">
+        <button class="btn btn-primary" (click)="addform()">Add language</button>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-md-center my-3">
     <div class="col-6">
       <div class="alert alert-success" *ngIf="isShowAlert">
         <strong>Success!</strong>Record Saved Successfully.
@@ -8,11 +14,8 @@
       <div class="alert alert-danger" *ngIf="isShowError">
         <strong>Danger!</strong> Error Occured.
       </div>
-      <!-- <div *ngIf="showForm=true">
-
-      </div> -->
-      <div >
-        <form class="container shadow-sm p-3 align-center bg-light border rounded row">
+      <div *ngIf="showForm==false">
+        <form class="container shadow-sm p-3 align-center bg-light border rounded row" #form="ngForm">
           <div class="mb-3 mt-3 col-md-6">
             <input type="text" class="form-control" [(ngModel)]="courseObj.courseName" name="courseName"
               placeholder="Enter course Name">
@@ -26,13 +29,13 @@
               name="courseBasicFees" placeholder="Enter course Basic Fees">
           </div>
           <div *ngIf="courseObj.courseId == 0" class="col-md-6">
-            <button class="btn btn-primary" (click)="addnewLanguage()">Add language</button>
+            <button class="btn btn-primary" (click)="addnewLanguage()" [disabled]="form.invalid">Add language</button>
           </div>
           <div *ngIf="courseObj.courseId != 0" class="col-md-6">
             <button class="btn btn-primary" (click)="updateLanguage()">update language</button>
           </div>
           <div class="col-md-6">
-            <button class="btn btn-primary" (click)="clearData()">clear</button>
+            <button class="btn btn-primary" (click)="addform()">clear</button>
           </div>
         </form>
       </div>

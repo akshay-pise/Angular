@@ -9,7 +9,7 @@ import { CandidatesService } from 'src/app/service/candidates.service';
 })
 export class CandidateComponent implements OnInit {
 
-
+  showForm:boolean=true;
   dataList: any;
   show: boolean;
   showcandidatelist: boolean;
@@ -72,9 +72,21 @@ export class CandidateComponent implements OnInit {
       })
   }
   onEditCandidate(para: any) {
-    debugger;
     this.CandidateInfo = para;
   }
-
+  addhideform() {
+    this.showForm == true ? this.showForm = false : this.showForm = true
+    this.CandidateInfo = {
+      "CandidateId": 0,
+      "Name": "string",
+      "ContactNo": "string",
+      "Email": "string",
+      "Password": "string",
+      "CreatedDate": "2022-09-30T10:13:39.311Z",
+      "City": "string",
+      "CollegeName": "string",
+      "Education": "string"
+    }
+  }
 
 }
