@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-md-3 d-flex justify-content-end">
+      <div *ngIf="showForm==true" class="flex-end">
+        <button class="btn btn-primary" (click)="addHideForm()">Add language</button>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-md-center my-3">
+    <div class="col-6">
+      <div class="alert alert-success" *ngIf="isShowAlert">
+        <strong>Success!</strong>Record Saved Successfully.
+      </div>
+      <div class="alert alert-danger" *ngIf="isShowError">
+        <strong>Danger!</strong> Error Occured.
+      </div>
+      <div *ngIf="showForm==false">
+        <form class="container shadow-sm p-3 align-center bg-light border rounded row" #form="ngForm">
+          <div class="mb-3 mt-3 col-md-6">
+            <input type="text" class="form-control" [(ngModel)]="masterInfo.masterId" name="courseName"
+              placeholder="Enter course Name">
+          </div>
+          <div class="mb-3 mt-3 col-md-6">
+            <input type="text" class="form-control" [(ngModel)]="masterInfo.masterName" name="courseName"
+              placeholder="Enter course Name">
+          </div>
+          <div class="mb-3 mt-3 col-md-6">
+            <input type="text" class="form-control" [(ngModel)]="masterInfo.masterFor" name="courseName"
+              placeholder="Enter course Name">
+          </div>
+          <div *ngIf="masterInfo.masterId == 0" class="col-md-6">
+            <button class="btn btn-primary" (click)="addnewField()" [disabled]="form.invalid">Add language</button>
+          </div>
+          <div *ngIf="masterInfo.masterId != 0" class="col-md-6">
+            <button class="btn btn-primary" (click)="updateField()">update language</button>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-primary" (click)="addHideForm()">clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="row container justify-content-md-center">
+    <div class="col-6" *ngFor='let list of masterList'>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="card-header"> Course Id :- {{list.masterId}}</div>
+        <div class="card-body">
+          <h5 class="card-title">name:- {{list.masterName}}</h5>
+          <p class="card-text">Contact:- {{list.masterFor}}</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-success p-1 col-3" (click)="onEditMaster(list)"> Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

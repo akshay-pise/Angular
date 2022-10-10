@@ -18,9 +18,7 @@ export class EnquiryComponent implements OnInit {
         "query": ""
       }
     ]
-
    }
-
   ngOnInit(): void {
     this.getAllEnquiryList()
   }

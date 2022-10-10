@@ -7,6 +7,7 @@ import { EnquiryComponent } from './component/enquiry/enquiry.component';
 import { EnrollmentComponent } from './component/enrollment/enrollment.component';
 import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
+import { MasterPageComponent } from './component/master-page/master-page.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { AuthGuard } from './service/auth.guard';
 
@@ -49,6 +50,10 @@ const routes: Routes = [
       {
         path: 'payment',
         component: PaymentComponent
+      },
+      {
+        path: 'masterPage',
+        component: MasterPageComponent
       }
     ]
   },

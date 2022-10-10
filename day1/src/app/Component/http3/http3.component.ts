@@ -50,7 +50,8 @@ export class Http3Component implements OnInit {
 
   addquestion(){
     // debugger;
-    this.http.post("http://onlinetestapi.gerasim.in/api/OnlineTest/AddQuestion",this.questionObjectFile).subscribe((result:any)=>{
+    this.http.post("http://onlinetestapi.gerasim.in/api/OnlineTest/AddQuestion",
+    this.questionObjectFile).subscribe((result:any)=>{
       this.showQuestion();
       alert(result.message);
       this. questionObjectFile={}
