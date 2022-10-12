@@ -1,0 +1,22 @@
+1) add ReactiveFormsModule in app.module
+
+2) create
+  courseForm: FormGroup; in component
+
+3) initialize form control in constructor
+
+constructor() {
+    this.courseForm = new FormGroup({
+      CourseId:new FormControl('0'),
+      CourseName: new FormControl(''),
+      CourseDuration: new FormControl(''),
+      CourseBasicFees: new FormControl('')
+    })
+   }
+4) add formgroup on form tag
+
+<form class="row g-3 needs-validation" [formGroup]="courseForm"  >
+
+5) add formControName on each input element
+
+  <input type="text" formControlName="CourseName" class="form-control">

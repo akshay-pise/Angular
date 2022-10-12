@@ -32,25 +32,6 @@ export class MasterPageComponent implements OnInit {
       this.masterList = result['data']
     })
   }
-  // addnewField() {
-  //   this.http.post("http://onlinetestapi.gerasim.in/api/OnlineTest/AddCourse",
-  //     this.masterInfo).subscribe((result: any) => {
-  //       // this.languagelist=result;
-
-  //       if (result.result == true) {
-  //         this.getAllMaster();
-  //         this.isShowAlert = true;
-  //         setTimeout(() => {
-  //           this.isShowAlert = false;
-  //         }, 5000);
-  //       } else {
-  //         this.isShowError = true;
-  //         setTimeout(() => {
-  //           this.isShowError = false;
-  //         }, 5000);
-  //       }
-  //     })
-  // }
   onEditMaster(para: any) {
     debugger;
     this.masterInfo = para;
@@ -71,7 +52,12 @@ export class MasterPageComponent implements OnInit {
       }
     })
   }
-  updateField() { }
+  // updateField() { }
+  updateField() {
+    this.servMaster.UpdateMaster(this.masterInfo).subscribe((result: any) => {
+      this.getAllMaster();
+    })
+  }
   addHideForm() {
     this.showForm == true ? this.showForm = false : this.showForm = true
     this.masterInfo = {

@@ -9,6 +9,7 @@ import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
 import { MasterPageComponent } from './component/master-page/master-page.component';
 import { PaymentComponent } from './component/payment/payment.component';
+import { ReactiveFormComponent } from './component/reactive-form/reactive-form.component';
 import { AuthGuard } from './service/auth.guard';
 
 const routes: Routes = [
@@ -54,6 +55,10 @@ const routes: Routes = [
       {
         path: 'masterPage',
         component: MasterPageComponent
+      },
+      {
+        path: 'reactive',
+        component: ReactiveFormComponent
       }
     ]
   },

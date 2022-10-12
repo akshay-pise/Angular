@@ -17,16 +17,16 @@
       <div *ngIf="showForm==false">
         <form class="container shadow-sm p-3 align-center bg-light border rounded row" #form="ngForm">
           <div class="mb-3 mt-3 col-md-6">
-            <input type="text" class="form-control" [(ngModel)]="masterInfo.masterId" name="courseName"
+            <input type="text" class="form-control" [(ngModel)]="masterInfo.masterId" name="mastersrno"
               placeholder="Enter course Name">
           </div>
           <div class="mb-3 mt-3 col-md-6">
-            <input type="text" class="form-control" [(ngModel)]="masterInfo.masterName" name="courseName"
-              placeholder="Enter course Name">
+            <input type="text" class="form-control" [(ngModel)]="masterInfo.masterName" name="masterName"
+              placeholder="Enter Master Name">
           </div>
           <div class="mb-3 mt-3 col-md-6">
-            <input type="text" class="form-control" [(ngModel)]="masterInfo.masterFor" name="courseName"
-              placeholder="Enter course Name">
+            <input type="text" class="form-control" [(ngModel)]="masterInfo.masterFor" name="masterFor"
+              placeholder="Enter Master For">
           </div>
           <div *ngIf="masterInfo.masterId == 0" class="col-md-6">
             <button class="btn btn-primary" (click)="addnewField()" [disabled]="form.invalid">Add language</button>

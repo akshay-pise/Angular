@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './component/home/home.component';
@@ -15,6 +13,8 @@ import {HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './service/auth.guard';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { MasterPageComponent } from './component/master-page/master-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormComponent } from './component/reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +27,15 @@ import { MasterPageComponent } from './component/master-page/master-page.compone
     EnrollmentComponent,
     PaymentComponent,
     DashboardComponent,
-    MasterPageComponent
+    MasterPageComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

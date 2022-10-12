@@ -16,7 +16,11 @@ export class MasterPageService {
   //   return this.http.post<any>("http://onlinetestapi.gerasim.in/api/OnlineTest/AddCourse")
   // }
   addNewMaster(obj:any):Observable<any> {
-    return this.http.post<any>("http://onlinetestapi.gerasim.in/api/OnlineTest/AddCourse",
+    return this.http.post<any>("http://onlinetestapi.gerasim.in/api/OnlineTest/AddMaster",
+      obj);
+  }
+  UpdateMaster(obj:any):Observable<any> {
+    return this.http.post<any>("http://onlinetestapi.gerasim.in/api/OnlineTest/UpdateMaster",
       obj);
   }
 }
