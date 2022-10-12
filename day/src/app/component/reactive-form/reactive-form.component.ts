@@ -8,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ReactiveFormComponent implements OnInit {
   courseForm: FormGroup;
-  unamepattern="[0-9]{5}"
+  unamepattern="[0-9]{5}";
   constructor() {
     this.courseForm=new FormGroup({
       CourseId:new FormControl('0'),
@@ -17,7 +17,6 @@ export class ReactiveFormComponent implements OnInit {
       CourseBasicFees:new FormControl('', [Validators.pattern(this.unamepattern)])
     })
   }
-
   ngOnInit(): void {
   }
   onSubmit(){

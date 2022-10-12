@@ -4,24 +4,20 @@
   <div *ngIf="courseForm.controls['CourseName'].touched">
     <span class="text-danger" *ngIf="courseForm.controls['CourseName'].errors?.['required']">required</span>
   </div>
-
   <label for="">Duration</label>
   <input type="text" formControlName="CourseDuration" class="form-control">
   <div *ngIf="courseForm.controls['CourseDuration'].touched">
     <span class="text-danger" *ngIf="courseForm.controls['CourseDuration'].errors?.['required']">required</span>
-    <span class="text-danger" *ngIf="courseForm.controls['CourseDuration'].errors?.['minLength']">minunum 3
+    <span class="text-danger" *ngIf="courseForm.controls['CourseDuration'].errors?.['minlength']">minunum 3
       letter</span>
-    <span class="text-danger" *ngIf="courseForm.controls['CourseDuration'].errors?.['maxLength']">maxmimun 6
+    <span class="text-danger" *ngIf="courseForm.controls['CourseDuration'].errors?.['maxlength']">maxmimun 6
       letter</span>
   </div>
-
-
   <label for="">Basic fees</label>
   <input type="text" formControlName="CourseBasicFees" class="form-control">
   <div *ngIf="courseForm.controls['CourseBasicFees'].touched">
-    <span class=" text-danger" *ngIf="courseForm.controls['CourseBasicFees'].errors?.['required']">required</span>
+    <span class=" text-danger" *ngIf="courseForm.controls['CourseBasicFees'].errors?.['pattern']">pattern match</span>
   </div>
-
   <button type="submit" (click)="onSubmit()">
     Save
   </button>
