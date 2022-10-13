@@ -1,0 +1,11 @@
+.todoItem{
+  height: 100px;
+  width: 150px;
+  box-shadow: 1px 1px 1px 1px black;
+  margin: 10px;
+  text-align: center;
+  border-radius: 5px;
+  justify-content: center;
+  padding: 30px 0;
+  background-color: aliceblue;
+}

@@ -15,6 +15,7 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { MasterPageComponent } from './component/master-page/master-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './component/reactive-form/reactive-form.component';
+import { ChartComponent } from './component/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ReactiveFormComponent } from './component/reactive-form/reactive-form.c
     PaymentComponent,
     DashboardComponent,
     MasterPageComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,

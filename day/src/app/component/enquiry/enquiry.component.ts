@@ -7,7 +7,7 @@ import { EnquiryService } from './enquiry.service';
   styleUrls: ['./enquiry.component.css']
 })
 export class EnquiryComponent implements OnInit {
-  enquirylist:any  ;
+  enquirylist:IEnquiry [] ;
   constructor(private enquser:EnquiryService) {
     this.enquirylist=[
       {
@@ -27,4 +27,11 @@ export class EnquiryComponent implements OnInit {
       this.enquirylist = result['data'];
     })
   }
+}
+export interface IEnquiry{
+  enqiryId:number;
+  name: string;
+  contactNo:string;
+  email:string;
+  query:string;
 }
