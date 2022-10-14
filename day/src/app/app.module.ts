@@ -16,6 +16,9 @@ import { MasterPageComponent } from './component/master-page/master-page.compone
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './component/reactive-form/reactive-form.component';
 import { ChartComponent } from './component/chart/chart.component';
+import { PrimeComponent } from './component/prime/prime.component';
+import {CalendarModule} from 'primeng/calendar';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -30,14 +33,17 @@ import { ChartComponent } from './component/chart/chart.component';
     DashboardComponent,
     MasterPageComponent,
     ReactiveFormComponent,
-    ChartComponent
+    ChartComponent,
+    PrimeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CalendarModule,
+    BrowserAnimationsModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

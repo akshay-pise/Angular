@@ -1,48 +1,143 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'node_modules/chart.js';
+import { ChartService } from './chart.service';
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.css']
 })
 export class ChartComponent implements OnInit {
+  basicData: any;
 
-  constructor() { }
+  basicOptions: any;
 
-  ngOnInit(): void {
-    const myChart = new Chart("myChart", {
-      type: 'bar',
-      data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
+  multiAxisData: any;
+
+  chartOptions: any;
+
+  multiAxisOptions: any;
+
+  constructor(private configService: ChartService) {}
+
+  ngOnInit() {
+      this.basicData = {
+          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+          datasets: [
+              {
+                  label: 'My First dataset',
+                  backgroundColor: '#42A5F5',
+                  data: [65, 59, 80, 81, 56, 55, 40]
+              },
+              {
+                  label: 'My Second dataset',
+                  backgroundColor: '#FFA726',
+                  data: [28, 48, 40, 19, 86, 27, 90]
+              }
+          ]
+      };
+
+      this.multiAxisData = {
+          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+          datasets: [{
+              label: 'Dataset 1',
+              backgroundColor: [
+                  '#EC407A',
+                  '#AB47BC',
+                  '#42A5F5',
+                  '#7E57C2',
+                  '#66BB6A',
+                  '#FFCA28',
+                  '#26A69A'
+              ],
+              yAxisID: 'y',
+              data: [65, 59, 80, 81, 56, 55, 10]
+          }, {
+              label: 'Dataset 2',
+              backgroundColor: '#78909C',
+              yAxisID: 'y1',
+              data: [28, 48, 40, 19, 86, 27, 90]
+          }]
+      };
+
+      this.multiAxisOptions = {
+          plugins: {
+              legend: {
+                  labels: {
+                      color: '#495057'
+                  }
+              },
+              tooltips: {
+                  mode: 'index',
+                  intersect: true
+              }
+          },
+          scales: {
+              x: {
+                  ticks: {
+                      color: '#495057'
+                  },
+                  grid: {
+                      color: '#ebedef'
+                  }
+              },
+              y: {
+                  type: 'linear',
+                  display: true,
+                  position: 'left',
+                  ticks: {
+                      min: 0,
+                      max: 100,
+                      color: '#495057'
+                  },
+                  grid: {
+                      color: '#ebedef'
+                  }
+              },
+              y1: {
+                  type: 'linear',
+                  display: true,
+                  position: 'right',
+                  grid: {
+                      drawOnChartArea: false,
+                      color: '#ebedef'
+                  },
+                  ticks: {
+                      min: 0,
+                      max: 100,
+                      color: '#495057'
+                  }
+              }
           }
-        }
-      }
-    });
+      };
+      // applyLightTheme() {
+        this.basicOptions = {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#495057'
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: '#495057'
+                    },
+                    grid: {
+                        color: '#ebedef'
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: '#495057'
+                    },
+                    grid: {
+                        color: '#ebedef'
+                    }
+                }
+            }
+        };
+      // }
+    }
+
   }
-}
