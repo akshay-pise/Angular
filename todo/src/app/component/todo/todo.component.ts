@@ -28,5 +28,12 @@ export class TodoComponent implements OnInit {
       color:''
     }
   }
+  onRemoveque(item: any) {
+    debugger;
+    this.todoObj[item+1].splice(item, 1);
+    // localStorage.removeItem('todoItem', item);
+    localStorage.removeItem('todoitem');
+
+  }
 
 }
