@@ -7,12 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePageComponent implements OnInit {
   profile:any;
-  constructor() { }
+  constructor() {
+    this.profile={
+      userName:"",
+      password:"",
+      designation:"",
+      currentEmployer:"",
+    };
+  }
 
   ngOnInit(): void {
   }
   onSubmit(){
-
+    localStorage.setItem("user",this.profile);
   }
   onBack(){
 

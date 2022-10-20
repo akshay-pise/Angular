@@ -6,8 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gallery-page.component.css']
 })
 export class GalleryPageComponent implements OnInit {
-
-  constructor() { }
+  imagesList:any [];
+  constructor() {
+    this.imagesList=[
+      {
+        imageName:'abcd',
+        imageLink:''
+      }
+    ]
+   }
 
   ngOnInit(): void {
   }
