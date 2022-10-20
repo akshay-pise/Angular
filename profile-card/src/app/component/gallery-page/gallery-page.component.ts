@@ -11,5 +11,7 @@ export class GalleryPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  onItemAdd(){
 
+  }
 }

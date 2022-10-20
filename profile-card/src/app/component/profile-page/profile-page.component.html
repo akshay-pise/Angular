@@ -1,1 +1,59 @@
-<p>profile-page works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="wrapper container align-items-center mt-5">
+        <div class="card">
+          <div class="card-header">Profile Page</div>
+          <form action="#" class="d-flex container flex-column pt-4" #form="ngForm">
+            <label for="">FirstName</label>
+            <div class="align-items-center input-field mb-3">
+              <input type="text" name="username" placeholder="Enter User Name" [(ngModel)]="profile.userName"
+                class="form-control py-2" #username="ngModel" minlength="3" required>
+              <div class="text-danger" *ngIf="username.touched">
+                <span *ngIf="username.errors?.['required']">Enter the name</span>
+                <span *ngIf="username.errors?.['minlength']">min 3 char requrired</span>
+              </div>
+            </div>
+            <label>Password</label>
+            <div class="align-items-center input-field mb-3">
+              <input type="password" placeholder="Password" [(ngModel)]="profile.password" class="py-2 form-control"
+                name="password" #passwd="ngModel" minlength="3" required>
+              <div class="text-danger" *ngIf="passwd.touched">
+                <span *ngIf="passwd.errors?.['required']">Enter the passward</span>
+                <span *ngIf="passwd.errors?.['minlength']">min 3 char requrired</span>
+              </div>
+            </div>
+            <label for="">Designation</label>
+            <div class="align-items-center input-field mb-3">
+              <input type="text" name="designation" placeholder="Enter User Designation"
+                [(ngModel)]="profile.designation" class="form-control py-2" #designation="ngModel" minlength="3"
+                required>
+              <div class="text-danger" *ngIf="designation.touched">
+                <span *ngIf="designation.errors?.['required']">Enter the designation</span>
+                <span *ngIf="designation.errors?.['minlength']">min 3 char requrired</span>
+              </div>
+            </div>
+            <label for="">Current Employer</label>
+            <div class="align-items-center input-field mb-3">
+              <input type="text" name="currentEmployer" placeholder="Enter User Name"
+                [(ngModel)]="profile.currentEmployer" class="form-control py-2" #currentEmployer="ngModel" minlength="3"
+                required>
+              <div class="text-danger" *ngIf="currentEmployer.touched">
+                <span *ngIf="currentEmployer.errors?.['required']">Enter the CurrentEmployer</span>
+                <span *ngIf="currentEmployer.errors?.['minlength']">min 3 char requrired</span>
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-md-2 d-flex">
+                <input type="submit" value="Login" (click)="onSubmit()" [disabled]="form.invalid"
+                  class="btn m-3 btn-primary">
+                <input type="submit" value="Back" (click)="onBack()" class="btn m-3 btn-success">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

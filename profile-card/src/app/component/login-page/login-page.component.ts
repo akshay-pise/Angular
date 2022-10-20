@@ -20,7 +20,7 @@ export class LoginPageComponent implements OnInit {
   }
   onSubmit() {
     if (this.loginObj.userName == 'admin' && this.loginObj.password == 'admin') {
-      this.router.navigateByUrl('home');
+      this.router.navigateByUrl('profile');
       localStorage.setItem('userid','admin');
 
     }
