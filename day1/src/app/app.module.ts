@@ -22,6 +22,8 @@ import { Http4Component } from './Component/http4/http4.component';
 import { Http5Component } from './Component/http5/http5.component';
 import { CustpipePipe } from './Component/custpipe.pipe';
 import { MyButtonComponent } from './reusableComponent/my-button/my-button.component';
+import { CandidateComponent } from './Component/candidate/candidate.component';
+import { TableComponent } from './reusableComponent/table/table.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { MyButtonComponent } from './reusableComponent/my-button/my-button.compo
     Http5Component,
     CustpipePipe,
     MyButtonComponent,
+    CandidateComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,

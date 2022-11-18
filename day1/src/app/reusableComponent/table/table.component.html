@@ -1,0 +1,54 @@
+<table class="table table-bordered border-dark border-2">
+  <thead>
+    <tr>
+      <th>SrNo</th>
+      <th *ngFor="let head of tablehead" >{{head}}</th>
+      <!-- <th>SrNo</th>
+      <th>Name</th>
+      <th>Contact</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>City</th>
+      <th>College Name</th>
+      <th>Education</th>
+      <th>Action</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let itemData of canList;let sr=index ">
+      <th>{{sr+1}}</th>
+      <th *ngFor="let head of tablehead">{{itemData[head]}}</th>
+    </tr>
+    <!-- <ng-container *ngIf="isLoaderon">
+      <tr>
+        <td class="text-center" colspan="12">
+          <img src="assets/loader.png" alt="">
+        </td>
+      </tr>
+    </ng-container> -->
+    <!-- <ng-container *ngIf="!isLoaderon"> -->
+      <!-- <p-confirmDialog [style]="{ width: '50vw'}"  [baseZIndex]="1000"></p-confirmDialog> -->
+      <!-- <tr *ngFor="let item of candidateList,let srno=index">
+        <td class="text-center">{{srno+1}}</td>
+        <td>{{item.name | titlecase}}</td>
+        <td>{{item.contactNo}}</td>
+        <td class="email_width">{{item.email}}</td>
+        <td>{{item.password}}</td>
+        <td>{{item.city}}</td>
+        <td class="clgname_width">{{item.collegeName}}</td>
+        <td class="edu_width">{{item.education}}</td>
+        <td>
+          <button class="btn btn-secondary fw-bold btn-sm mt-1 me-1">Edit</button>
+          <button class="btn btn-danger fw-bold btn-sm mt-1">Delete</button>
+        </td>
+      </tr> -->
+    <!-- </ng-container> -->
+    <!-- <ng-container *ngIf="candidateList.length==0">
+      <tr>
+        <td colspan="10" class="text-center">
+          No Record Present
+        </td>
+      </tr>
+    </ng-container> -->
+  </tbody>
+</table>

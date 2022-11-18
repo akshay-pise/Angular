@@ -2,6 +2,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CalculatorComponent } from './Component/calculator/calculator.component';
+import { CandidateComponent } from './Component/candidate/candidate.component';
 import { HttpClientComponent } from './Component/http-client/http-client.component';
 import { Http2Component } from './Component/http2/http2.component';
 import { Http3Component } from './Component/http3/http3.component';
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'http5', component: Http5Component },
   { path: 'pipe', component: PipeComponent },
   { path: 'loginpage', component: LoginPageComponent },
+  {path:'candidate', component:CandidateComponent}
 ];
 
 @NgModule({
