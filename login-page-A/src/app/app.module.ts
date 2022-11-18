@@ -15,7 +15,8 @@ import { TopicsComponent } from './component/topics/topics.component';
 import { UserLoginComponent } from './component/user/user-login/user-login.component';
 import { UsersComponent } from './component/users/users.component';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { CandidateComponent } from './component/candidate/candidate.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {HttpClientModule} from '@angular/common/http'
     StudentComponent,
     TopicsComponent,
     UserLoginComponent,
-    UsersComponent
+    UsersComponent,
+    CandidateComponent
   ],
   imports: [
     BrowserModule,
