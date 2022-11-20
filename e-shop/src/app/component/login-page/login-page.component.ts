@@ -6,10 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
+  isResgistrationOpen:boolean=false;
+  constructor() {
 
-  constructor() { }
+   }
 
   ngOnInit(): void {
   }
+  getLogin(){
+
+  }
+  onRegister(){
+
+  }
+  getRegLogin(){
+
+  }
+  register(){
+
+  }
 
 }
+
