@@ -7,33 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
   todoItem: string = '';
-  todoObj:any={
-    todoItem:'',
-    color:''
+  todoObj: any = {
+    todoItem: '',
+    color: ''
   };
   todoItemsArray: any[] = [];
   constructor() { }
 
   ngOnInit(): void {
-    const localData=localStorage.getItem('todoitem');
-    if(localData!=null){
-      this.todoItemsArray=JSON.parse(localData);
+    const localData = localStorage.getItem('todoitem');
+    if (localData != null) {
+      this.todoItemsArray = JSON.parse(localData);
     }
   }
   onItemAdd() {
     this.todoItemsArray.push(this.todoObj);
     localStorage.setItem('todoitem', JSON.stringify(this.todoItemsArray));
-    this.todoObj ={
-      todoItem:'',
-      color:''
+    this.todoObj = {
+      todoItem: '',
+      color: ''
     }
   }
   onRemoveque(item: any) {
-    debugger;
-    this.todoObj[item+1].splice(item, 1);
-    // localStorage.removeItem('todoItem', item);
-    localStorage.removeItem('todoitem');
-
+    this.todoItemsArray.splice(item, 1);
+    localStorage.setItem('todoitem', JSON.stringify(this.todoItemsArray));
   }
 
 }

@@ -22,7 +22,6 @@
             <div class="row text-center">
               <div class="col-md-4 pt-2" *ngFor="let item of todoItemsArray; let mySr=index ; index as i">
                 <div class="todoItem" [style.background-color]="item.color">{{item.todoItem}}</div>
-
                     <button class="btn btn-danger btn-sm" (click)="onRemoveque(i)">Delete</button>
 
             </div>
