@@ -25,13 +25,13 @@ export class CandidateComponent implements OnInit {
   constructor(private candiSrv: CandidateService) {
     this.candidateList = [];
     this.candidateObj = new user();
-    this.candidateHead=["Name",
-    "Contact",
-    "Email",
-    "Password",
-    "City",
-    "College Name",
-    "Education"]
+    this.candidateHead=["name",
+    "contactNo",
+    "email",
+    "password",
+    "city",
+    "collegeName",
+    "education"]
   }
   ngOnInit(): void {
     this.getAllCandidate();
