@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Sr NO</th>
+      <th *ngFor="let heading of headarray">{{heading}}</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of dataarray,let srno = index">
+      <td>{{srno+1}}</td>
+      <td *ngFor="let heading of headarray">{{item[heading]}}</td>
+      <td>
+        <button (click)="onedit(item)">edit</button>
+        <button (click)="onDelete(item)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
