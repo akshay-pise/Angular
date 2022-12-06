@@ -7,8 +7,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ReustableComponent implements OnInit {
 
-  @Input() headarray: any[] = [];
-  @Input() dataarray: any[] = [];
+  @Input() headarray: any;
+  @Input() dataarray: any;
 
   @Output() onpedit = new EventEmitter<any>();
   @Output() onpDelete= new EventEmitter<any>();

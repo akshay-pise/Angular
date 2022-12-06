@@ -11,6 +11,9 @@
                   <div class="form-outline">
                     <input type="text" formControlName="firstname" id="firstName" class="form-control" />
                     <label class="form-label" for="firstName">First Name</label>
+                    <div *ngIf="regform.controls['firstname'].touched">
+
+                    </div>
                   </div>
 
                 </div>
