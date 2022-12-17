@@ -1,5 +1,6 @@
 <div class="container-fluid">
   <div class="col-md-12 mt-4">
+    <div class="col-12"></div>
     <div class="row">
       <div class="col-md-1">
       </div>
@@ -16,23 +17,15 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let item of demoList">
-              <td>{{item | json}}</td>
-              <!-- <td>{{item['1. open'] | json}}</td> -->
-                          <!-- <td>{{item.low}}</td>
-                          <td>{{item.close}}</td>
-                          <td>{{item.volume}}</td> -->
-
+            <tr *ngFor="let keys of demoList">
+              <td>{{getkey(keys)}}</td>
+              <td>{{keys[getkey(keys)]['1. open']}}</td>
+              <td>{{keys[getkey(keys)]['2. high']}}</td>
+              <td>{{keys[getkey(keys)]['3. low'] |json}}</td>
+              <td>{{keys[getkey(keys)]['4. close'] |json}}</td>
+              <td>{{keys[getkey(keys)]['5. volume'] |json}}</td>
             </tr>
           </tbody>
-          <!-- <tr *ngFor="let item of dataarray,let srno = index">
-            <td>{{srno+1}}</td>
-            <td *ngFor="let heading of headarray">{{item[heading]}}</td>
-            <td>
-              <button (click)="onedit(item)">edit</button>
-              <button (click)="onDelete(item)">Delete</button>
-            </td>
-          </tr> -->
         </table>
       </div>
     </div>
