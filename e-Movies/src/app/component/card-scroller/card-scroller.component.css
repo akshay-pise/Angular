@@ -1,0 +1,14 @@
+.cardScroller{
+  height: 200px;
+  display: flex;
+  /* width:11.7%; */
+  overflow:hidden;
+  overflow-x: auto;
+}
+.cardElement{
+
+  line-height: 110px;
+  text-align: center;
+  background-color: #ddd;
+  margin-right: 2px;
+}
