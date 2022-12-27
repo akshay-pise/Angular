@@ -4,19 +4,22 @@ import { OTTDashboardComponent } from './pages/o-ttdashboard/o-ttdashboard.compo
 
 const routes: Routes = [
   {
-    path:'',
-    component:OTTDashboardComponent
-  },
-  {
-    path: 'films',
-    loadChildren: () => import('./pages/film/film.module').then(m => m.FilmModule)
-  },
-  {
-    path: 'media',
-    loadChildren: () => import('./pages/media/media.module').then(m => m.MediaModule)
-  },
-  { path: 'music',
-   loadChildren: () => import('./pages/music/music.module').then(m => m.MusicModule)
+    path: '',
+    component: OTTDashboardComponent,
+    children: [
+      {
+        path: 'films',
+        loadChildren: () => import('./pages/film/film.module').then(m => m.FilmModule)
+      },
+      {
+        path: 'media',
+        loadChildren: () => import('./pages/media/media.module').then(m => m.MediaModule)
+      },
+      {
+        path: 'music',
+        loadChildren: () => import('./pages/music/music.module').then(m => m.MusicModule)
+      }
+    ]
   }
 ];
 
