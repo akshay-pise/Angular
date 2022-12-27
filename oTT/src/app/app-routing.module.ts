@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { OTTDashboardComponent } from './pages/o-ttdashboard/o-ttdashboard.component';
 
 const routes: Routes = [
+  {
+    path:'',
+    component:OTTDashboardComponent
+  },
   {
     path: 'films',
     loadChildren: () => import('./pages/film/film.module').then(m => m.FilmModule)

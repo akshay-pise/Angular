@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { OTTDashboardComponent } from './pages/o-ttdashboard/o-ttdashboard.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OTTDashboardComponent
   ],
   imports: [
     BrowserModule,
