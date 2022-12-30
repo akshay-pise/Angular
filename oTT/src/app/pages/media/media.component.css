@@ -1,0 +1,25 @@
+.cardScroller{
+  height: 200px;
+  display: flex;
+  overflow:hidden;
+  overflow-x: auto;
+}
+.cardElement{
+  line-height: 110px;
+  text-align: center;
+  width:11.7%;
+  background-color: #ddd;
+  margin-right: 2px;
+}
+.custocard{
+margin-left: 4vw;
+}
+.cardele{
+  background-color: white;
+    display: inline-block;
+}
+.cardele:hover{
+/* box-sizing: 0px 25px 45px black; */
+/* opacity: .5; */
+transform: scale(0.5) translate(-100%, -100%);
+}
