@@ -17,9 +17,10 @@ margin-left: 4vw;
 .cardele{
   background-color: white;
     display: inline-block;
+    opacity: .7;
 }
 .cardele:hover{
 /* box-sizing: 0px 25px 45px black; */
-/* opacity: .5; */
-transform: scale(0.5) translate(-100%, -100%);
+opacity: 1;
+/* transform: scale(0.5) translate(-100%, -100%); */
 }
