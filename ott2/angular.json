@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "oTT": {
+    "ott2": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/o-tt",
+            "outputPath": "dist/ott2",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,9 +23,6 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/primeicons/primeicons.css",
-    "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
-    "node_modules/primeng/resources/primeng.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -67,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "oTT:build:production"
+              "browserTarget": "ott2:build:production"
             },
             "development": {
-              "browserTarget": "oTT:build:development"
+              "browserTarget": "ott2:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "oTT:build"
+            "browserTarget": "ott2:build"
           }
         },
         "test": {

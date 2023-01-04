@@ -1,10 +1,26 @@
-<div class="card custocard b-0">
-  <h5>Moives</h5>
-<div class="cardScroller card-body">
-  <div *ngFor="let data of dataSource">
-  <div class="cardElement d-flex justify-content-center">
+<div class="card custocard b-0 overflowhide">
+  <h3>Moives</h3>
+  <div class=".p-carousel-container">
+    <div class="card .p-carousel-items-content">
+      <p-carousel [value]="images" styleClass="custom-carousel" [numVisible]="4" [numScroll]="1"
+        [responsiveOptions]="responsiveOptions" [showIndicators]="false" [circular]="true">
+        <ng-template let-image pTemplate="item">
+          <div class="item card">
+            <img src="{{image.picture}}" class="card-img-top" alt="...">
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</div>
+<div class="card custocard b-0 m-2">
+  <h3>Series</h3>
+<div class="cardScroller card-body d-flex">
+  <div *ngFor="let data of dataSource,let srno=index">
+  <div tabindex={{srno}} class="cardElement d-flex justify-content-center" (keydown)="moveCell($event)">
     <div class="card cardele">
-      <img src="{{data.Img}}" alt="Images" style="height: 200px;width:150px">
+      <img src="{{data.Img}}" alt="Images"style="width:250px;height:300px;object-fit: cover;
+      object-position: center;" >
     </div>
   </div></div>
 </div>

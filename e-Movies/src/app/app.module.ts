@@ -9,8 +9,6 @@ import { FilmComponent } from './component/film/film.component';
 import { CardScrollerComponent } from './component/card-scroller/card-scroller.component';
 import {HttpClientModule} from '@angular/common/http';
 
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +21,6 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]
