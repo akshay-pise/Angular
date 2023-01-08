@@ -19,13 +19,13 @@ export class ChatpageComponent implements OnInit {
 
   }
   getUserChatList() {
-    debugger
+
     this.serv.getUserList().subscribe((result: any) => {
       this.userChatList = result.data;
     })
   }
   getUserGroupChatList(){
-    debugger;
+
     this.serv.getUserGroupList().subscribe((result:any) =>{
       this.getUserGroupChatList=result.data;
     })
