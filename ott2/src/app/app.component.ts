@@ -7,7 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ott2';
-  onKeydown(){
-    console.log('workoing')
-      }
+  constructor(){}
 }
