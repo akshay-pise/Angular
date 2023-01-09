@@ -90,6 +90,7 @@
   height: calc(80vh);
   padding: 50px;
   overflow-y: auto;
+  background-color: #d1d1d1;
 }
 
 .message {
@@ -166,17 +167,17 @@
   position: relative;
   width: 100%;
   height: 60px;
-  background: #f0f0f0;
+  background: #d1d1d1;
   padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.chat_input ion-icon {
+.chat_input i {
   cursor: pointer;
   font-size: 1.8em;
-  color: #51585c;
+  /* color: #51585c; */
 }
 
 .chat_input ion-icon:nth-child(1) {

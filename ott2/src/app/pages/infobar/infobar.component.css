@@ -39,15 +39,21 @@
   padding: 12px;
   text-decoration: none;
 }
+.vertical-menu .viewall{
+  color: rgb(64, 156, 231);
+}
 
 .vertical-menu a:hover {
   background-color: #ccc;
 }
 .vertical-menu {
   /* width: 200px; */
-  height: 200px;
-  margin: 20px 10px;
+  height: 250px;
+  margin:  10px;
+  transition: ease 0.1s;
 }
-h4{
+.infoTitle p{
   margin-top: 18px;
+  font-size: 18px;
+  font-weight: 600;
 }
