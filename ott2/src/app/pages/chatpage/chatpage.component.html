@@ -5,12 +5,24 @@
       Briidea
     </a>
   </div>
-  <div class="search-container p-2">
-    <input class="form-control p-1 fw-600" type="text" placeholder="&#x1F50E;&#xFE0E; Search.." name="search">
+  <div class="search-container form-control p-2 d-flex">
+    <button type="submit"><i class="fa fa-search"></i></button>
+    <input class=" p-1 fw-600" type="text" placeholder="Search.." name="search">
   </div>
   <h3>Direct meassage</h3>
   <div class="vertical-menu">
     <main class="leaderboard__profiles">
+
+      <!-- <article class="leaderboard__profile d-flex justify-content-between px-2" *ngFor="let item of userChatList">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8pa9GYZH_-HFPa1cmz0jHxuOEmHDORnrZiYTqeg_PZw&s"
+          class="rounded-circle shadow-sm p-1 bg-white rounded">
+        <div class="leaderboard__name align-items-center">
+          <div>{{item.firstname}} {{item.lastname}}</div>
+          <div>{{item.designation_name}}-{{item.address}}</div>
+        </div>
+        <div class="leaderboard__value d-flex align-items-center"></div>
+      </article> -->
+
       <article class="leaderboard__profile d-flex justify-content-between px-2">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8pa9GYZH_-HFPa1cmz0jHxuOEmHDORnrZiYTqeg_PZw&s"
           class="rounded-circle shadow-sm p-1 bg-white rounded">
@@ -31,7 +43,6 @@
         <div class="leaderboard__name d-flex align-items-center">Elizabeth Holmes</div>
         <div class="leaderboard__value d-flex align-items-center">4 may</div>
       </article>
-
       <article class="leaderboard__profile d-flex justify-content-between  px-2">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8pa9GYZH_-HFPa1cmz0jHxuOEmHDORnrZiYTqeg_PZw&s"
           class="rounded-circle shadow-sm p-1 bg-white rounded">
@@ -54,10 +65,14 @@
   </div>
   <h3>Product Team</h3>
   <div class="vertical-menu">
+
+    <!-- <a href="#" *ngFor="let item of userChatList">{{item.chat_group_name}}</a> -->
+
     <a href="#">web team 1</a>
     <a href="#">sales team</a>
     <a href="#">finance team</a>
     <a href="#">marketing team</a>
+    <p>new group</p>
     <a href="#">web team 1</a>
     <a href="#">sales team</a>
     <a href="#">finance team</a>

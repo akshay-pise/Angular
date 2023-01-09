@@ -16,18 +16,17 @@ export class ChatpageComponent implements OnInit {
   ngOnInit(): void {
     this.getUserChatList();
     this.getUserGroupChatList();
-
   }
   getUserChatList() {
-
+    debugger;
     this.serv.getUserList().subscribe((result: any) => {
       this.userChatList = result.data;
     })
   }
-  getUserGroupChatList(){
-
-    this.serv.getUserGroupList().subscribe((result:any) =>{
-      this.getUserGroupChatList=result.data;
+  getUserGroupChatList() {
+    debugger;
+    this.serv.getUserGroupList().subscribe((result: any) => {
+      this.getUserGroupChatList = result.data;
     })
   }
 }

@@ -4,17 +4,14 @@
   display: grid;
   grid-gap: 10px;
 }
-.topicMenu div p{
+
+.topicMenu div p {
   padding: 5px 20px;
   margin: 10px;
   font-weight: bold;
 }
 
-.topicMenu hr {
-  width: 20%;
-  margin: 0px 30px;
-  border: 1px solid dark;
-}
+
 .topicMenuList {
   padding: 10px;
   padding-right: 0px;
@@ -27,6 +24,7 @@
   cursor: pointer;
 
 }
+
 .topicMenuList:hover {
   border-radius: 15px;
   border: 1px solid dark;
@@ -39,20 +37,31 @@
   padding: 12px;
   text-decoration: none;
 }
-.vertical-menu .viewall{
+
+.vertical-menu .viewall {
   color: rgb(64, 156, 231);
 }
 
 .vertical-menu a:hover {
-  background-color: #ccc;
+  overflow: cover;
+  transform: scale(0.9);
+  box-shadow: 0 9px 47px 11px rgba(51, 51, 51, 0.18);
+
 }
+
 .vertical-menu {
-  /* width: 200px; */
-  height: 250px;
-  margin:  10px;
+  height: calc(30vh);
+  margin: 10px;
   transition: ease 0.1s;
 }
-.infoTitle p{
+
+.topicMenu hr {
+  width: 20%;
+  margin: 0px 30px;
+  border: 1px solid dark;
+}
+
+.infoTitle p {
   margin-top: 18px;
   font-size: 18px;
   font-weight: 600;
