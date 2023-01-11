@@ -34,8 +34,11 @@
   width: 100%;
   height: calc(80vh);
   padding: 50px;
-  overflow-y: auto;
+  overflow-y: scroll;
   background-color: #d1d1d1;
+}
+.chatbox::-webkit-scrollbar {
+  display: none;
 }
 .message {
   position: relative;
