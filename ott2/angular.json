@@ -74,7 +74,8 @@
               "sslCert": "ssl/server.crt"
             },
             "development": {
-              "browserTarget": "ott2:build:development"
+              "browserTarget": "ott2:build:development",
+              "ssl": true
             }
           },
           "defaultConfiguration": "development"
