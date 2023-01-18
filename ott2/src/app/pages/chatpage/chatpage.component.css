@@ -30,15 +30,15 @@ a {
 }
 .vertical-menu{
   /* width: 200px; */
-  height: 200px;
-  margin: 20px 10px;
+  height: auto;
+  margin: 20px 0px;
   overflow-y: auto;
 }
 h3 {
   margin-top: 20px;
 }
 .endmenu {
-  position: relative;
+  position: absolute;
   left: 0px;
   bottom: 0px;
   color: black;

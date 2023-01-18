@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServiceService } from './service/service.service';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ott2';
-  constructor(){}
+  puserChatList:any[]=[]
+  constructor(private serv: ServiceService) { }
+
+  ngOnInit(): void {
+    this.getUserChatList();
+  }
+  getUserChatList() {
+    this.serv.getUserList().subscribe((result: any) => {
+      this.puserChatList = result.results;
+    })
+  }
 }

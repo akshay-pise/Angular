@@ -11,15 +11,18 @@ export class IntercepterService implements HttpInterceptor{
 
   constructor() { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    let token = req.clone({
-      setHeaders: {
-        'Access-Control-Allow-Origin': '*'
-      }
-    })
+    // let token = req.clone({
+    //   setHeaders: {
+    //     'Access-Control-Allow-Origin': '*'
+    //   }
+    // })
+    // return next.handle(token);
+
     // req = req.clone({ headers: req.headers.set('Authorization', 'bearer ' + sessionStorage.getItem('NRBA_SESSION_ID')) });
     // req = req.clone({ headers: req.headers.set('Access-Control-Allow-Origin', '*') });
     // req = req.clone({ headers: req.headers.set('Access-Control-Allow-Methods', '*') });
     // req = req.clone({ headers: req.headers.set('Access-Control-Allow-Headers', '*') });
-    return next.handle(token);
+
+    return next.handle(req);
   }
 }

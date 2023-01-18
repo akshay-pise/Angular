@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ServiceService } from 'src/app/service/service.service';
 
 @Component({
   selector: 'app-infobar',
@@ -9,10 +10,14 @@ export class InfobarComponent implements OnInit {
 
   droplist: boolean = false;
   droplist1: boolean = false;
-  constructor() { }
-
-  ngOnInit(): void {
+  itemcoutn:number;
+  @Input() userChatList: any[] = [];
+  constructor(private serv: ServiceService) {
+    this.itemcoutn=this.userChatList.length;
   }
+
+  ngOnInit(): void {}
+
   changeicon() {
     (this.droplist === true)?(this.droplist = false):(this.droplist = true);
   }

@@ -10,12 +10,13 @@ export class ServiceService {
   constructor(private http: HttpClient) { }
 
   getUserList(): Observable<any[]> {
+    return this.http.get<any[]>("https://randomuser.me/api/");
 
-    return this.http.get<any[]>("https://briidea.ensurechat.com/api/UserChat/showUserListforChat/");
+    // return this.http.get<any[]>("https://briidea.ensurechat.com/api/UserChat/showUserListforChat/");
   }
-  getUserGroupList(): Observable<any[]> {
-    return this.http.get<any[]>("https://briidea.ensurechat.com/api/ChatGroup/showGroupListforChat/");
-  }
+  // getUserGroupList(): Observable<any[]> {
+  //   return this.http.get<any[]>("https://briidea.ensurechat.com/api/ChatGroup/showGroupListforChat/");
+  // }
 
   //   User Chat Window API
   // https://briidea.ensurechat.com/api/UserChat/row?id=63&start=0

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ServiceService } from 'src/app/service/service.service';
 
 @Component({
@@ -7,24 +7,17 @@ import { ServiceService } from 'src/app/service/service.service';
   styleUrls: ['./chatpage.component.css']
 })
 export class ChatpageComponent implements OnInit {
-
-  userChatList: any[] = [];
-  userGroupChatList: any[] = [];
-
+  @Input() userChatList: any[] = [];
   constructor(private serv: ServiceService) { }
 
   ngOnInit(): void {
-    this.getUserChatList();
-    this.getUserGroupChatList();
+    // this.getUserChatList();
+    // this.getUserGroupChatList();
   }
   getUserChatList() {
     this.serv.getUserList().subscribe((result: any) => {
-      this.userChatList = result.data;
-    })
-  }
-  getUserGroupChatList() {
-    this.serv.getUserGroupList().subscribe((result: any) => {
-      this.getUserGroupChatList = result.data;
+      this.userChatList = result.results;
+      console.log(this.userChatList);
     })
   }
 }
