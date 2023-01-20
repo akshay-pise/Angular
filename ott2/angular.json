@@ -67,15 +67,16 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "production": {
-              "browserTarget": "ott2:build:production",
+            "options": {
               "ssl": true,
               "sslKey": "ssl/server.key",
               "sslCert": "ssl/server.crt"
             },
+            "production": {
+              "browserTarget": "ott2:build:production"
+            },
             "development": {
-              "browserTarget": "ott2:build:development",
-              "ssl": true
+              "browserTarget": "ott2:build:development"
             }
           },
           "defaultConfiguration": "development"
