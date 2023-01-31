@@ -1,0 +1,100 @@
+<div class="card mt-3">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="fs-blod">Registration form</div>
+      </div>
+      <div class="col flex-end">
+        <button>Back</button>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="userForm">
+      <div class="row pb-3 ">
+        <div class="col-md-4">
+          <label for="">First name</label>
+          <input type="text" class="form-control" formControlName="firstname">
+          <div class="text-danger" *ngIf="userForm.controls['firstname'].touched">
+            <div *ngIf="userForm.controls['firstname'].errors?.['required']">required</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="">last name</label>
+          <input type="text" class="form-control" formControlName="lastname">
+          <div *ngIf="userForm.controls['lastname'].touched" class="text-danger">
+            <div *ngIf="userForm.controls['lastname'].errors?.['required']">required</div>
+          </div>
+        </div>
+      </div>
+      <div class="row pb-3 ">
+        <div class="col-md-4">
+          <label for="">Email</label>
+          <input type="email" class="form-control" formControlName="email">
+          <div *ngIf="userForm.controls['email'].touched" class="text-danger">
+            <div *ngIf="userForm.controls['email'].errors?.['required']">required</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="">Phone Number</label>
+          <input type="number" class="form-control" formControlName="phoneNumber">
+          <div *ngIf="userForm.controls['phoneNumber'].touched" class="text-danger">
+            <div *ngIf="userForm.controls['phoneNumber'].errors?.['required']">required</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="">Status</label>
+          <input type="text" class="form-control">
+        </div>
+      </div>
+      <div class="row pb-3 ">
+        <div class="col-md-4">
+          <label for="">Dob</label>
+          <input type="date" class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label for="">Password</label>
+          <input type="text" class="form-control">
+        </div>
+      </div>
+      <div class="row pb-3 ">
+        <div class="col-md-4">
+          <label for="">Country</label>
+          <select name="" id="" class="form-control">
+            <option value="">Select Country</option>
+            <option value="India">India</option>
+            <option value="Shrilanka">Shrilanka</option>
+            <option value="Nepal">Nepal</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="">State</label>
+          <select name="" id="" class="form-control">
+            <option value="">Select State</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Goa">Goa</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="">City</label>
+          <select name="" id="" class="form-control">
+            <option value="">Select City</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Pune">Pune</option>
+            <option value="Thane">Thane</option>
+          </select>
+        </div>
+      </div>
+      <div class="row pb-3  justify-content-center">
+        <div class="col-md-4">
+          <button class="btn bg-success" (click)="onSubmit()">Submit</button>
+        </div>
+        <div class="col-md-4">
+          <button class="btn bg-danger">Clear</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
