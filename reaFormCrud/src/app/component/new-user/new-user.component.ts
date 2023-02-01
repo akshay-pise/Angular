@@ -25,11 +25,20 @@ export class NewUserComponent implements OnInit {
       status:new FormControl('',Validators.required),
       dob:new FormControl('',Validators.required),
       paswd:new FormControl('',Validators.required),
-
+      // address: new FormGroup({
+      //   country:new FormControl('',Validators.required),
+      //   state:new FormControl('',Validators.required),
+      //   city:new FormControl('',Validators.required)
+      // })
     })
   }
   onSubmit(){
     this.userForm.markAllAsTouched();
+    if(!this.userForm.invalid){
+      let arr=[]
+      arr.push(this.userForm.value);
+      localStorage.setItem('uerList',JSON.stringify(arr));
+    }
   }
 
 }

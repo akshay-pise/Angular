@@ -44,48 +44,66 @@
         </div>
         <div class="col-md-4">
           <label for="">Status</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" formControlName="status">
+          <div *ngIf="userForm.controls['status'].touched" class="text-danger">
+            <div *ngIf="userForm.controls['status'].errors?.['required']">this is required</div>
+          </div>
         </div>
       </div>
       <div class="row pb-3 ">
         <div class="col-md-4">
           <label for="">Dob</label>
-          <input type="date" class="form-control">
+          <input type="date" class="form-control" formControlName="dob">
+          <div *ngIf="userForm.controls['dob'].touched"class="text-danger">
+            <div *ngIf="userForm.controls['dob'].errors?.['required']">this is required</div>
+          </div>
         </div>
         <div class="col-md-4">
           <label for="">Password</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" formControlName="paswd">
+          <div *ngIf="userForm.controls['paswd'].touched">
+            <div *ngIf="userForm.controls['paswd'].errors?.['required']">this is required</div>
+          </div>
         </div>
       </div>
-      <div class="row pb-3 ">
+      <!-- <div class="row pb-3 ">
         <div class="col-md-4">
           <label for="">Country</label>
-          <select name="" id="" class="form-control">
+          <select class="form-control" formControlName="country">
             <option value="">Select Country</option>
             <option value="India">India</option>
             <option value="Shrilanka">Shrilanka</option>
             <option value="Nepal">Nepal</option>
           </select>
+          <div *ngIf="userForm.get('address.country')?.touched" class="text-danger">
+            <div *ngIf="userForm.get('address.country')?.errors?.['required']">This is required</div>
+          </div>
         </div>
         <div class="col-md-4">
           <label for="">State</label>
-          <select name="" id="" class="form-control">
+          <select name="" id="" class="form-control" formControlName="state">
             <option value="">Select State</option>
             <option value="Maharashtra">Maharashtra</option>
             <option value="Punjab">Punjab</option>
             <option value="Goa">Goa</option>
           </select>
+          <div *ngIf="userForm.get('address.state')?.touched" class="text-danger">
+            <div *ngIf="userForm.get('address.state')?.errors?.['required']">This is required</div>
+          </div>
         </div>
         <div class="col-md-4">
           <label for="">City</label>
-          <select name="" id="" class="form-control">
+          <select class="form-control" formControlName="city">
             <option value="">Select City</option>
             <option value="Mumbai">Mumbai</option>
             <option value="Pune">Pune</option>
             <option value="Thane">Thane</option>
           </select>
+          <div *ngIf="userForm.get('address.city')?.touched" class="text-danger">
+            <div *ngIf="userForm.get('address.city')?.errors?.['required']">This is required</div>
+          </div>
         </div>
-      </div>
+      </div> -->
       <div class="row pb-3  justify-content-center">
         <div class="col-md-4">
           <button class="btn bg-success" (click)="onSubmit()">Submit</button>
